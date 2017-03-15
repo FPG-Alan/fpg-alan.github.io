@@ -8,22 +8,19 @@
 
 
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="源于看到了一段不是很懂得代码,使用了按位或运算符。平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
-位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移
-需要注意的是几个移">
+  <meta name="description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
+位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript按位操作符">
 <meta property="og:url" content="https://fpg-alan.github.io/2017/03/02/bitwise-operators/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="源于看到了一段不是很懂得代码,使用了按位或运算符。平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
-位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移
-需要注意的是几个移">
-<meta property="og:updated_time" content="2017-03-02T08:59:38.000Z">
+<meta property="og:description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
+位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移">
+<meta property="og:updated_time" content="2017-03-06T07:42:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript按位操作符">
-<meta name="twitter:description" content="源于看到了一段不是很懂得代码,使用了按位或运算符。平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
-位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移
-需要注意的是几个移">
+<meta name="twitter:description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
+位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移">
   
     <link rel="alternate" href="/atom.xml" title="Unspecified" type="application/atom+xml">
   
@@ -72,7 +69,7 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>源于看到了一段不是很懂得代码,使用了按位或运算符。<br>平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。</p>
+        <p>源于看到了一段不是很懂得代码, 使用了按位或运算符。<br>hi , i’am here……<br>平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。</p>
 <p>位运算符包括 &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移</p>
 <p>需要注意的是几个移位运算符。<br>左移会将数值的所有位向左移动指定的位数。在左移后,原数值右侧空出的位由0填补。<br>左移一位其实就相当于将原数值乘以2,不会影响操作数的符号位。</p>
 <p>有符号右移会将数值向右移动,但保留符号位。在移位过程中,空缺位出现在原数值的左侧,符号位的右侧,用符号位的值来填充空位。<br>右移一位相当于原数除2后向下取整。</p>
@@ -111,7 +108,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2017/03/03/from-angular-to-aurelia-then-react/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">下一页</strong>
+      <div class="article-nav-title">
+        
+          Angular, Aurelia, React/Vue 前端JS的框架之路
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-older" class="article-nav-link-wrap older">
