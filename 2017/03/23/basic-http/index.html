@@ -14,9 +14,10 @@
 对HTTP乃至TCP/IP的理解
 对浏览器如何解析HTML、CSS、JS等资源的理解。所以今天的描述只代表我目前的理解程度。
 
-用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。
 
-浏览器接收目标地">
+
+用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。
+浏览器接收目标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从输入地址到获取页面详细过程">
 <meta property="og:url" content="https://fpg-alan.github.io/2017/03/23/basic-http/index.html">
@@ -27,10 +28,11 @@
 对HTTP乃至TCP/IP的理解
 对浏览器如何解析HTML、CSS、JS等资源的理解。所以今天的描述只代表我目前的理解程度。
 
-用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。
 
-浏览器接收目标地">
-<meta property="og:updated_time" content="2017-03-23T09:25:06.000Z">
+
+用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。
+浏览器接收目标">
+<meta property="og:updated_time" content="2017-03-23T09:27:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从输入地址到获取页面详细过程">
 <meta name="twitter:description" content="之前看过一到面试题,需要尽可能的详细描述用户在浏览器中打开一个网页的过程,目前我把《HTTP权威指南》看到了第五章,在这里试着描述一下。
@@ -39,9 +41,10 @@
 对HTTP乃至TCP/IP的理解
 对浏览器如何解析HTML、CSS、JS等资源的理解。所以今天的描述只代表我目前的理解程度。
 
-用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。
 
-浏览器接收目标地">
+
+用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。
+浏览器接收目标">
   
     <link rel="alternate" href="/atom.xml" title="Unspecified" type="application/atom+xml">
   
@@ -94,10 +97,11 @@
 <p>这个过程可以说的很简单,也可以很复杂,我认为主要还是</p>
 <ol>
 <li>对HTTP乃至TCP/IP的理解</li>
-<li><p>对浏览器如何解析HTML、CSS、JS等资源的理解。<br>所以今天的描述只代表我目前的理解程度。</p>
-</li>
-<li><p>用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。</p>
-</li>
+<li>对浏览器如何解析HTML、CSS、JS等资源的理解。<br>所以今天的描述只代表我目前的理解程度。</li>
+</ol>
+<hr>
+<ol>
+<li>用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。</li>
 <li>浏览器接收目标地址,从目标地址(URL)中解析出方案(协议),端口号(默认80),以及可能会存在的查询条件。</li>
 <li>浏览器检查缓存表中是否存在对应IP,如果存在则直接获取IP,如果不存在则连接DNS域名解析服务器,获取对应IP。</li>
 <li>浏览器根据上一步获得的IP地址,开始尝试连接目标主机<br> 4.1 向目标主机发送一个40-80字节的TCP分组,带有一个SYN标志,用来说明这是一个连接请求<br> 4.2 如果一切顺利,目标服务器对一些连接参数进行计算,并返回一个TCP分组,这个分组中,存在SYN和ACK标志位,说明连接请求已经被接受<br> 4.3 浏览器向目标服务器发送一个TCP分组通知它连接已经建立</li>
