@@ -1,3 +1,7 @@
+.webgl {
+  background: #fff;
+}
+
 .example .test1 {
   width: 100px;
   height: 100px;
@@ -11,10 +15,6 @@
   color: #000;
   cursor: pointer;
   padding: 2px;
-}
-
-.webgl {
-  background: #fff;
 }
 
 @font-face {
