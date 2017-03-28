@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2017 | Unspecified</title>
+    <title>Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Personal Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Unspecified">
-<meta property="og:url" content="https://fpg-alan.github.io/archives/2017/index.html">
+<meta property="og:url" content="https://fpg-alan.github.io/page/2/index.html">
 <meta property="og:site_name" content="Unspecified">
 <meta property="og:description" content="Personal Blog">
 <meta name="twitter:card" content="summary">
@@ -180,307 +180,144 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main">
+    <article id="post-nodejs-version-controll" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
         <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/28/git-command/">Git命令总结(转自知乎)</a>
+            <a class="article-title" href="/2017/02/28/nodejs-version-controll/">nodejs 版本管理</a>
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/03/28/git-command/">
-            <time datetime="2017-03-28T09:54:20.000Z" itemprop="datePublished">2017-03-28</time>
+        <a href="/2017/02/28/nodejs-version-controll/">
+            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Git/">Git</a>
+        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/27/edge-between-code-and-hardware/">代码和硬件的边界</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。</p>
+<hr>
+<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
+<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
+<hr>
+<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
+<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
+<hr>
+<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/27/edge-between-code-and-hardware/">
-            <time datetime="2017-03-27T07:10:51.000Z" itemprop="datePublished">2017-03-27</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/23/basic-http/">从输入地址到获取页面详细过程</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/23/basic-http/">
-            <time datetime="2017-03-23T08:29:59.000Z" itemprop="datePublished">2017-03-23</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/15/frontend-tech-stack/">前端技术栈</a>
-        </h1>
-    
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/15/frontend-tech-stack/">
-            <time datetime="2017-03-15T02:51:36.000Z" itemprop="datePublished">2017-03-15</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/03/javascript-async-method/">javascript-async-method</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/03/javascript-async-method/">
-            <time datetime="2017-03-03T07:35:46.000Z" itemprop="datePublished">2017-03-03</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript/">javascript</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/03/learn-jsonp/">learn-jsonp</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/03/learn-jsonp/">
-            <time datetime="2017-03-03T06:47:33.000Z" itemprop="datePublished">2017-03-03</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/03/from-global-to-cmd-amd-to-ES6-module/">global, cmd/amd, ES6 Module Js的模块化进程</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/03/from-global-to-cmd-amd-to-ES6-module/">
-            <time datetime="2017-03-03T05:52:33.000Z" itemprop="datePublished">2017-03-03</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/technology-stack/">technology stack</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/03/from-angular-to-aurelia-then-react/">Angular, Aurelia, React/Vue 前端JS的框架之路</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/03/from-angular-to-aurelia-then-react/">
-            <time datetime="2017-03-03T05:44:38.000Z" itemprop="datePublished">2017-03-03</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/technology-stack/">technology stack</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/02/bitwise-operators/">Javascript按位操作符</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/02/bitwise-operators/">
-            <time datetime="2017-03-02T03:45:47.000Z" itemprop="datePublished">2017-03-02</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript/">javascript</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/02/need-to-know-in-ES6/">ES6里需要了解的新内容</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/02/need-to-know-in-ES6/">
-            <time datetime="2017-03-02T03:06:37.000Z" itemprop="datePublished">2017-03-02</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript/">javascript</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
+    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj0tdbrhw000fvlj78n90w5vn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">下一页 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
 </section>
             

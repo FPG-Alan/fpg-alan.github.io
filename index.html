@@ -152,11 +152,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                10
+                11
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                3
+                4
                 <span>标签</span>
             </div>
         </div>
@@ -181,6 +181,147 @@
 
             
             <section id="main">
+    <article id="post-git-command" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/03/28/git-command/">Git命令总结(转自知乎)</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/28/git-command/">
+            <time datetime="2017-03-28T09:54:20.000Z" itemprop="datePublished">2017-03-28</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Git/">Git</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><img src="https://pic3.zhimg.com/v2-08109c618d76d2f7cbb3f6a4d36f30d2_b.jpg" alt=""></p>
+<p>基本命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"># 安装Git</div><div class="line">$ sudo apt install git</div><div class="line"></div><div class="line"># 配置个人信息</div><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email &quot;email@example.com&quot;</div><div class="line"></div><div class="line"># 切换目录初始化</div><div class="line">$ git init</div><div class="line"></div><div class="line"># 文件添加到仓库</div><div class="line">$ git add -p &lt;file&gt;</div><div class="line"></div><div class="line"># 把文件提交到仓库</div><div class="line">$ git commit -m &quot;add LICENSE&quot;</div><div class="line"></div><div class="line"># 查看仓库当前状态</div><div class="line">$ git status</div><div class="line"></div><div class="line"># 查看difference</div><div class="line">$ git diff</div><div class="line"></div><div class="line"># 显示从最近到最远的提交日志</div><div class="line">$ git log --pretty=oneline # 格式化输出信息</div><div class="line"></div><div class="line"># 版本退回</div><div class="line">$ git reset --hard HEAD^ # 当前版本HEAD,上一个版本HEAD^,上上个版本HEAD^^</div><div class="line">$ git reset --hard 130f10a # 或HEAD~100</div><div class="line"></div><div class="line"># 查看命令记录</div><div class="line">$ git reflog</div><div class="line"></div><div class="line"># 丢弃工作区的修改，回到最近一次git commit或git add时的状态：</div><div class="line">$ git checkout -- README.md</div><div class="line"></div><div class="line"># 把暂存区的修改撤销掉（unstage）</div><div class="line">$ git reset HEAD READER.md</div><div class="line"></div><div class="line"># 从版本库中删除该文件</div><div class="line">$ git rm README.md</div><div class="line">$ git commit -m &quot;remove READER.md&quot;</div><div class="line"></div><div class="line"># 把误删的文件恢复到最新版本，checkout其实用版本库里的版本替换工作区的版本</div><div class="line">$ git checkout -- README.md</div></pre></td></tr></table></figure><br>远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</div><div class="line"># 测试是否成功</div><div class="line">$ ssh -T git@github.com</div><div class="line"></div><div class="line"># 把一个已有的本地仓库与之关联</div><div class="line">$ git remote add origin git@github.com:Windrivder/Windrivder.git</div><div class="line"></div><div class="line"># 把本地库的所有内容推送到远程库上（推送master分支的内容）</div><div class="line">$ git push -u origin master</div><div class="line"></div><div class="line"># 向远程库推送更新</div><div class="line">$ git push origin master</div><div class="line"></div><div class="line"># 从远程库克隆</div><div class="line">$ git clone git@github.com:michaelliao/gitskills.git</div></pre></td></tr></table></figure><br>分支管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line"># 创建+切换dev分支</div><div class="line">$ git checkout -b dev</div><div class="line"></div><div class="line"># 相当于</div><div class="line">$ git branch dev # 创建分支</div><div class="line">$ git checkout dev</div><div class="line"></div><div class="line"># 查看当前分支，当前分支前面标有×号</div><div class="line">$ git branch</div><div class="line"></div><div class="line"># 切换回master分支</div><div class="line">$ git checkout master</div><div class="line"></div><div class="line"># 合并指定分支到当前分支</div><div class="line">$ git merge dev</div><div class="line"></div><div class="line"># 删除dev分支</div><div class="line">$ git branch -d dev</div><div class="line"></div><div class="line"># 查看分支合并情况</div><div class="line">$ git log --graph --pretty=oneline --abbrev-commit</div><div class="line">*   59bc1cb conflict fixed</div><div class="line">|\</div><div class="line">| * 75a857c AND simple</div><div class="line">* | 400b400 &amp; simple</div><div class="line">|/</div><div class="line">* fec145a branch test</div><div class="line"></div><div class="line"># 删除feature1分支</div><div class="line">$ git branch -d feature1</div><div class="line"></div><div class="line"># 创建并切换dev分支</div><div class="line">$ git checkout -b dev</div><div class="line"></div><div class="line"># 修改readme.txt文件，并提交一个新的commit</div><div class="line">$ git add readme.txt</div><div class="line">$ git commit -m &quot;add merge&quot;</div><div class="line"></div><div class="line"># 切换回master</div><div class="line">$ git checkout master</div><div class="line"></div><div class="line"># 合并dev分支，请注意--no-ff参数，表示禁用Fast forward</div><div class="line">$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</div><div class="line"></div><div class="line"># 看看分支历史</div><div class="line">$ git log --graph --pretty=oneline --abbrev-commit</div><div class="line">*   7825a50 merge with no-ff</div><div class="line">|\</div><div class="line">| * 6224937 add merge</div><div class="line">|/</div><div class="line">*   59bc1cb conflict fixed</div><div class="line"></div><div class="line"># 如果需要临时修复Bug，可以把当前工作现场“储藏”起来，等Bug修复后恢复现场后继续工作</div><div class="line">$ git stash</div><div class="line"></div><div class="line"># 此时查看工作区是干净</div><div class="line"># 切换到需要修复Bug的分支，创建临时分支来修复</div><div class="line">$ git checkout master</div><div class="line">$ git checkout -b issue-101</div><div class="line"></div><div class="line"># 修复完成后切换到master分支，完成合并，删除临时分支</div><div class="line">$ git checkout master</div><div class="line">$ git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101</div><div class="line">$ git branch -d issue-101</div><div class="line"></div><div class="line"># Bug修复后，切换回dev分支继续干活</div><div class="line">$ git checkout dev</div><div class="line"></div><div class="line"># 查看工作现场列表</div><div class="line">$ git stash list</div><div class="line"></div><div class="line"># 恢复工作现场</div><div class="line">$ git stash pop # 恢复的同时把stash内容也删了</div><div class="line">$ git stash apply # 恢复，不删除stash的内容，使用git stash drop</div><div class="line"></div><div class="line"># 再次查看工作现场列表，干净</div><div class="line">$ git stash list</div><div class="line"></div><div class="line"># 可以多次stash，恢复时指定恢复</div><div class="line">$ git stash apply stash@&#123;0&#125;</div><div class="line"></div><div class="line"># 强行删除一个没有合并过的分支</div><div class="line">$ git branch -D &lt;name&gt;</div><div class="line"></div><div class="line"># 要查看远程库的信息</div><div class="line">$ git remote</div><div class="line">$ git remote -v</div><div class="line"></div><div class="line"># 推送其他分支</div><div class="line">$ git push origin dev</div><div class="line"></div><div class="line"># 从远程库clone，默认情况只能看到master分支，需要在dev分支，必须创建远程origin的dev分支到本地</div><div class="line">$ git checkout -b dev origin/dev</div><div class="line">$ git checkout -b branch-name origin/branch-name</div><div class="line">$ git branch --set-upstream branch-name origin/branch-name # 关联</div><div class="line"></div><div class="line"># 向远程库推送dev有冲突</div><div class="line">$ git pull # 抓取到本地合并解决冲突，再向远程推送</div><div class="line">$ git push origin dev</div></pre></td></tr></table></figure></p>
+<p>标签管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"># 切换到需要打标签的分支</div><div class="line">$ git branch</div><div class="line">$ git checkout master</div><div class="line"></div><div class="line"># 创建标签</div><div class="line">$ git tag v1.0</div><div class="line"></div><div class="line"># 查看所有标签</div><div class="line">$ git tag</div><div class="line"></div><div class="line"># 给历史提高的commit id打标签</div><div class="line">$ git log --pretty=oneline --abbrev-commit # 查看commit id</div><div class="line">$ git tag v0.9 6224937</div><div class="line"></div><div class="line"># 查看标签信息</div><div class="line">$ git show v0.9</div><div class="line"></div><div class="line"># 创建带有说明的标签</div><div class="line">$ git tag -a v0.1 -m &quot;version 0.1 released&quot; 3628164</div><div class="line"></div><div class="line"># 用PGP签名标签</div><div class="line">$ git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</div><div class="line"></div><div class="line"># 推送某个标签到远程</div><div class="line">$ git push origin v1.0</div><div class="line"></div><div class="line"># 一次性推送全部尚未推送到远程的本地标签</div><div class="line">$ git push origin --tags</div><div class="line"></div><div class="line"># 删除远程标签</div><div class="line">$ git tag -d v0.9 # 删除本地</div><div class="line">$ git push origin :refs/tags/v0.9 # 删除远程</div></pre></td></tr></table></figure><br>自定义 Git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 显示颜色，会让命令输出看起来更醒目</div><div class="line">$ git config --global color.ui true</div><div class="line"></div><div class="line"># 忽略某些文件时，需要编写.gitignore，然后将.gitignore放到版本库中</div><div class="line"># st就表示status</div><div class="line">$ git config --global alias.st status</div><div class="line"></div><div class="line"># 配置一个unstage别名</div><div class="line">$ git config --global alias.unstage &apos;reset HEAD&apos;</div><div class="line">$ git unstage test.py # 等价于</div><div class="line">$ git reset HEAD test.py</div><div class="line"></div><div class="line"># 显示最后一次提交信息</div><div class="line">$ git config --global alias.last &apos;log -1&apos;</div><div class="line"></div><div class="line"># log</div><div class="line">git config --global alias.lg &quot;log --color --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit&quot;</div><div class="line"># 每个仓库的配置文件放在.git/config</div><div class="line"># 当前用户的配置文件放在用户主目录下的一个隐藏文件.gitconfig中</div></pre></td></tr></table></figure><br>搭建 Git 服务器</p>
+<ol>
+<li>安装 git：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure></li>
+<li>创建一个 git 用户，用来运行 git 服务：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo adduser git</div></pre></td></tr></table></figure></li>
+<li><p>创建证书登录：收集所有需要登录的用户的公钥，就是他们自己的 id_rsa.pub 文件，把所有公钥导入到 /home/git/.ssh/authorized_keys 文件里，一行一个</p>
+</li>
+<li><p>初始化 Git 仓库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 选定一个目录作为 Git 仓库，假定是 /srv/sample.git，在 /srv 目录下输入命令</div><div class="line"></div><div class="line">$ sudo git init --bare sample.git</div><div class="line"># 把 owner 改为 git</div><div class="line">$ sudo chown -R git:git sample.git</div></pre></td></tr></table></figure></li>
+<li>禁用 shell 登录：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 编辑/etc/passwd文件</div><div class="line">git:x:1001:1001:,,,:/home/git:/bin/bash # 修改成下面的内容</div><div class="line">git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</div></pre></td></tr></table></figure></li>
+<li>克隆远程仓库，在各自的电脑上运行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git@server:/srv/sample.git</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>作者：驭风者<br>链接：<a href="https://zhuanlan.zhihu.com/p/25892137" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25892137</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://fpg-alan.github.io/2017/03/28/git-command/" data-id="cj0tdbrht000avlj7pxpym2bs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://fpg-alan.github.io/2017/03/28/git-command/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://fpg-alan.github.io/2017/03/28/git-command/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-edge-between-code-and-hardware" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -229,7 +370,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/27/edge-between-code-and-hardware/" data-id="cj0rush7t0000uej7wfy6ad9g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/27/edge-between-code-and-hardware/" data-id="cj0tdbrhi0002vlj7cth5xsyc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -369,7 +510,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/23/basic-http/" data-id="cj0rush830001uej74mwthhz9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/23/basic-http/" data-id="cj0tdbrha0000vlj7vtfwl721" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -492,7 +633,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/15/frontend-tech-stack/" data-id="cj0rush8f0006uej7b5vgfa4c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/15/frontend-tech-stack/" data-id="cj0tdbrhq0006vlj7gthrlmh3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -618,7 +759,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/03/javascript-async-method/" data-id="cj0rush8g0007uej7o6c5gn01" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/03/javascript-async-method/" data-id="cj0tdbrhs0009vlj7qntwuxww" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -739,7 +880,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/03/learn-jsonp/" data-id="cj0rush8h000auej7h6r5tolx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/03/learn-jsonp/" data-id="cj0tdbrhv000dvlj7zvi55nai" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -880,7 +1021,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/03/from-global-to-cmd-amd-to-ES6-module/" data-id="cj0rush8c0005uej783uo8oyq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/03/from-global-to-cmd-amd-to-ES6-module/" data-id="cj0tdbrhp0005vlj7fhf2ul9w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1013,7 +1154,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/03/from-angular-to-aurelia-then-react/" data-id="cj0rush860003uej76anooxxs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/03/from-angular-to-aurelia-then-react/" data-id="cj0tdbrho0004vlj76us8fwry" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1148,7 +1289,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/02/bitwise-operators/" data-id="cj0rush840002uej7q8dt22f7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/02/bitwise-operators/" data-id="cj0tdbrhf0001vlj7ffwtdb62" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1334,7 +1475,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/03/02/need-to-know-in-ES6/" data-id="cj0rush8l000euej7smyjh7gu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/03/02/need-to-know-in-ES6/" data-id="cj0tdbrhx000hvlj71z1ojnvn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1412,140 +1553,9 @@
 
 
 
-    <article id="post-nodejs-version-controll" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/02/28/nodejs-version-controll/">nodejs 版本管理</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。</p>
-<hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj0rush8j000cuej7jhlas6gd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
+    <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    </nav>
 </section>
             
                 <aside id="sidebar">
@@ -1555,6 +1565,25 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/28/git-command/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/28/git-command/" class="title">Git命令总结(转自知乎)</a></p>
+                            <p class="item-date"><time datetime="2017-03-28T09:54:20.000Z" itemprop="datePublished">2017-03-28</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1632,25 +1661,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/03/learn-jsonp/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/03/03/learn-jsonp/" class="title">learn-jsonp</a></p>
-                            <p class="item-date"><time datetime="2017-03-03T06:47:33.000Z" itemprop="datePublished">2017-03-03</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1662,7 +1672,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1671,7 +1681,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1680,7 +1690,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/technology-stack/" style="font-size: 15px;">technology stack</a>
+            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/technology-stack/" style="font-size: 15px;">technology stack</a>
         </div>
     </div>
 
