@@ -5,19 +5,16 @@
     
     <title>Javascript按位操作符 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
-位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移">
+    <meta name="description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript按位操作符">
 <meta property="og:url" content="https://fpg-alan.github.io/2017/03/02/bitwise-operators/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
-位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移">
-<meta property="og:updated_time" content="2017-03-06T07:42:25.000Z">
+<meta property="og:description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。">
+<meta property="og:updated_time" content="2017-03-29T08:03:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript按位操作符">
-<meta name="twitter:description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。
-位运算符包括 &amp;amp;, |, ^, ~, &amp;lt;&amp;lt;, &amp;gt;&amp;gt;, &amp;gt;&amp;gt;&amp;gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移">
+<meta name="twitter:description" content="源于看到了一段不是很懂得代码, 使用了按位或运算符。hi , i’am here……平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。">
     
 
     
@@ -184,7 +181,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-bitwise-operators" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-bitwise-operators" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -222,8 +219,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>源于看到了一段不是很懂得代码, 使用了按位或运算符。<br>hi , i’am here……<br>平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。</p>
-<p>位运算符包括 &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移</p>
+            <p>源于看到了一段不是很懂得代码, 使用了按位或运算符。<br>hi , i’am here……<br>平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。<br><a id="more"></a><br>位运算符包括 &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移</p>
 <p>需要注意的是几个移位运算符。<br>左移会将数值的所有位向左移动指定的位数。在左移后,原数值右侧空出的位由0填补。<br>左移一位其实就相当于将原数值乘以2,不会影响操作数的符号位。</p>
 <p>有符号右移会将数值向右移动,但保留符号位。在移位过程中,空缺位出现在原数值的左侧,符号位的右侧,用符号位的值来填充空位。<br>右移一位相当于原数除2后向下取整。</p>
 <p>无符号右移会将数值的所有32位都向右移动。对正数来说,无符号右移的结果和有符号相同,但是对负数来说就不一样了,无符号右移会把负数的符号位也进行移动,左边空出位置用0填充。</p>
@@ -234,6 +230,7 @@
 
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -338,6 +335,8 @@
 
     
 </article>
+
+
 
 
     

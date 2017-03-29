@@ -181,7 +181,7 @@
 
             
             <section id="main">
-    <article id="post-nodejs-version-controll" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nodejs-version-controll" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -218,19 +218,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。</p>
-<hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
-
+            <p><p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/02/28/nodejs-version-controll/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -313,6 +307,8 @@
     </div>
     
 </article>
+
+
 
 
 

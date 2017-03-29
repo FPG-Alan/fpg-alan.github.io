@@ -121,6 +121,9 @@ body {
   font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
+body.post #profile {
+  display: none;
+}
 a {
   color: #f08d50;
   text-decoration: none;
@@ -180,6 +183,14 @@ code {
 }
 #container > .outer {
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  body.post #main {
+    display: inline;
+    float: left;
+    width: 75.38461538461539%;
+    margin: 0 0.769230769230769%;
+  }
 }
 @media screen and (min-width: 1200px) {
   #main {
@@ -778,7 +789,7 @@ code {
   top: 50px;
   right: 20px;
   z-index: 999;
-  display: block;
+  display: block !important;
   min-width: 280px;
   position: absolute;
 }

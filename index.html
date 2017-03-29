@@ -181,7 +181,7 @@
 
             
             <section id="main">
-    <article id="post-git-command" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-git-command" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -218,25 +218,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p><img src="https://pic3.zhimg.com/v2-08109c618d76d2f7cbb3f6a4d36f30d2_b.jpg" alt=""></p>
-<p>基本命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"># 安装Git</div><div class="line">$ sudo apt install git</div><div class="line"></div><div class="line"># 配置个人信息</div><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email &quot;email@example.com&quot;</div><div class="line"></div><div class="line"># 切换目录初始化</div><div class="line">$ git init</div><div class="line"></div><div class="line"># 文件添加到仓库</div><div class="line">$ git add -p &lt;file&gt;</div><div class="line"></div><div class="line"># 把文件提交到仓库</div><div class="line">$ git commit -m &quot;add LICENSE&quot;</div><div class="line"></div><div class="line"># 查看仓库当前状态</div><div class="line">$ git status</div><div class="line"></div><div class="line"># 查看difference</div><div class="line">$ git diff</div><div class="line"></div><div class="line"># 显示从最近到最远的提交日志</div><div class="line">$ git log --pretty=oneline # 格式化输出信息</div><div class="line"></div><div class="line"># 版本退回</div><div class="line">$ git reset --hard HEAD^ # 当前版本HEAD,上一个版本HEAD^,上上个版本HEAD^^</div><div class="line">$ git reset --hard 130f10a # 或HEAD~100</div><div class="line"></div><div class="line"># 查看命令记录</div><div class="line">$ git reflog</div><div class="line"></div><div class="line"># 丢弃工作区的修改，回到最近一次git commit或git add时的状态：</div><div class="line">$ git checkout -- README.md</div><div class="line"></div><div class="line"># 把暂存区的修改撤销掉（unstage）</div><div class="line">$ git reset HEAD READER.md</div><div class="line"></div><div class="line"># 从版本库中删除该文件</div><div class="line">$ git rm README.md</div><div class="line">$ git commit -m &quot;remove READER.md&quot;</div><div class="line"></div><div class="line"># 把误删的文件恢复到最新版本，checkout其实用版本库里的版本替换工作区的版本</div><div class="line">$ git checkout -- README.md</div></pre></td></tr></table></figure><br>远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</div><div class="line"># 测试是否成功</div><div class="line">$ ssh -T git@github.com</div><div class="line"></div><div class="line"># 把一个已有的本地仓库与之关联</div><div class="line">$ git remote add origin git@github.com:Windrivder/Windrivder.git</div><div class="line"></div><div class="line"># 把本地库的所有内容推送到远程库上（推送master分支的内容）</div><div class="line">$ git push -u origin master</div><div class="line"></div><div class="line"># 向远程库推送更新</div><div class="line">$ git push origin master</div><div class="line"></div><div class="line"># 从远程库克隆</div><div class="line">$ git clone git@github.com:michaelliao/gitskills.git</div></pre></td></tr></table></figure><br>分支管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line"># 创建+切换dev分支</div><div class="line">$ git checkout -b dev</div><div class="line"></div><div class="line"># 相当于</div><div class="line">$ git branch dev # 创建分支</div><div class="line">$ git checkout dev</div><div class="line"></div><div class="line"># 查看当前分支，当前分支前面标有×号</div><div class="line">$ git branch</div><div class="line"></div><div class="line"># 切换回master分支</div><div class="line">$ git checkout master</div><div class="line"></div><div class="line"># 合并指定分支到当前分支</div><div class="line">$ git merge dev</div><div class="line"></div><div class="line"># 删除dev分支</div><div class="line">$ git branch -d dev</div><div class="line"></div><div class="line"># 查看分支合并情况</div><div class="line">$ git log --graph --pretty=oneline --abbrev-commit</div><div class="line">*   59bc1cb conflict fixed</div><div class="line">|\</div><div class="line">| * 75a857c AND simple</div><div class="line">* | 400b400 &amp; simple</div><div class="line">|/</div><div class="line">* fec145a branch test</div><div class="line"></div><div class="line"># 删除feature1分支</div><div class="line">$ git branch -d feature1</div><div class="line"></div><div class="line"># 创建并切换dev分支</div><div class="line">$ git checkout -b dev</div><div class="line"></div><div class="line"># 修改readme.txt文件，并提交一个新的commit</div><div class="line">$ git add readme.txt</div><div class="line">$ git commit -m &quot;add merge&quot;</div><div class="line"></div><div class="line"># 切换回master</div><div class="line">$ git checkout master</div><div class="line"></div><div class="line"># 合并dev分支，请注意--no-ff参数，表示禁用Fast forward</div><div class="line">$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</div><div class="line"></div><div class="line"># 看看分支历史</div><div class="line">$ git log --graph --pretty=oneline --abbrev-commit</div><div class="line">*   7825a50 merge with no-ff</div><div class="line">|\</div><div class="line">| * 6224937 add merge</div><div class="line">|/</div><div class="line">*   59bc1cb conflict fixed</div><div class="line"></div><div class="line"># 如果需要临时修复Bug，可以把当前工作现场“储藏”起来，等Bug修复后恢复现场后继续工作</div><div class="line">$ git stash</div><div class="line"></div><div class="line"># 此时查看工作区是干净</div><div class="line"># 切换到需要修复Bug的分支，创建临时分支来修复</div><div class="line">$ git checkout master</div><div class="line">$ git checkout -b issue-101</div><div class="line"></div><div class="line"># 修复完成后切换到master分支，完成合并，删除临时分支</div><div class="line">$ git checkout master</div><div class="line">$ git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101</div><div class="line">$ git branch -d issue-101</div><div class="line"></div><div class="line"># Bug修复后，切换回dev分支继续干活</div><div class="line">$ git checkout dev</div><div class="line"></div><div class="line"># 查看工作现场列表</div><div class="line">$ git stash list</div><div class="line"></div><div class="line"># 恢复工作现场</div><div class="line">$ git stash pop # 恢复的同时把stash内容也删了</div><div class="line">$ git stash apply # 恢复，不删除stash的内容，使用git stash drop</div><div class="line"></div><div class="line"># 再次查看工作现场列表，干净</div><div class="line">$ git stash list</div><div class="line"></div><div class="line"># 可以多次stash，恢复时指定恢复</div><div class="line">$ git stash apply stash@&#123;0&#125;</div><div class="line"></div><div class="line"># 强行删除一个没有合并过的分支</div><div class="line">$ git branch -D &lt;name&gt;</div><div class="line"></div><div class="line"># 要查看远程库的信息</div><div class="line">$ git remote</div><div class="line">$ git remote -v</div><div class="line"></div><div class="line"># 推送其他分支</div><div class="line">$ git push origin dev</div><div class="line"></div><div class="line"># 从远程库clone，默认情况只能看到master分支，需要在dev分支，必须创建远程origin的dev分支到本地</div><div class="line">$ git checkout -b dev origin/dev</div><div class="line">$ git checkout -b branch-name origin/branch-name</div><div class="line">$ git branch --set-upstream branch-name origin/branch-name # 关联</div><div class="line"></div><div class="line"># 向远程库推送dev有冲突</div><div class="line">$ git pull # 抓取到本地合并解决冲突，再向远程推送</div><div class="line">$ git push origin dev</div></pre></td></tr></table></figure></p>
-<p>标签管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"># 切换到需要打标签的分支</div><div class="line">$ git branch</div><div class="line">$ git checkout master</div><div class="line"></div><div class="line"># 创建标签</div><div class="line">$ git tag v1.0</div><div class="line"></div><div class="line"># 查看所有标签</div><div class="line">$ git tag</div><div class="line"></div><div class="line"># 给历史提高的commit id打标签</div><div class="line">$ git log --pretty=oneline --abbrev-commit # 查看commit id</div><div class="line">$ git tag v0.9 6224937</div><div class="line"></div><div class="line"># 查看标签信息</div><div class="line">$ git show v0.9</div><div class="line"></div><div class="line"># 创建带有说明的标签</div><div class="line">$ git tag -a v0.1 -m &quot;version 0.1 released&quot; 3628164</div><div class="line"></div><div class="line"># 用PGP签名标签</div><div class="line">$ git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</div><div class="line"></div><div class="line"># 推送某个标签到远程</div><div class="line">$ git push origin v1.0</div><div class="line"></div><div class="line"># 一次性推送全部尚未推送到远程的本地标签</div><div class="line">$ git push origin --tags</div><div class="line"></div><div class="line"># 删除远程标签</div><div class="line">$ git tag -d v0.9 # 删除本地</div><div class="line">$ git push origin :refs/tags/v0.9 # 删除远程</div></pre></td></tr></table></figure><br>自定义 Git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 显示颜色，会让命令输出看起来更醒目</div><div class="line">$ git config --global color.ui true</div><div class="line"></div><div class="line"># 忽略某些文件时，需要编写.gitignore，然后将.gitignore放到版本库中</div><div class="line"># st就表示status</div><div class="line">$ git config --global alias.st status</div><div class="line"></div><div class="line"># 配置一个unstage别名</div><div class="line">$ git config --global alias.unstage &apos;reset HEAD&apos;</div><div class="line">$ git unstage test.py # 等价于</div><div class="line">$ git reset HEAD test.py</div><div class="line"></div><div class="line"># 显示最后一次提交信息</div><div class="line">$ git config --global alias.last &apos;log -1&apos;</div><div class="line"></div><div class="line"># log</div><div class="line">git config --global alias.lg &quot;log --color --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit&quot;</div><div class="line"># 每个仓库的配置文件放在.git/config</div><div class="line"># 当前用户的配置文件放在用户主目录下的一个隐藏文件.gitconfig中</div></pre></td></tr></table></figure><br>搭建 Git 服务器</p>
-<ol>
-<li>安装 git：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure></li>
-<li>创建一个 git 用户，用来运行 git 服务：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo adduser git</div></pre></td></tr></table></figure></li>
-<li><p>创建证书登录：收集所有需要登录的用户的公钥，就是他们自己的 id_rsa.pub 文件，把所有公钥导入到 /home/git/.ssh/authorized_keys 文件里，一行一个</p>
-</li>
-<li><p>初始化 Git 仓库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 选定一个目录作为 Git 仓库，假定是 /srv/sample.git，在 /srv 目录下输入命令</div><div class="line"></div><div class="line">$ sudo git init --bare sample.git</div><div class="line"># 把 owner 改为 git</div><div class="line">$ sudo chown -R git:git sample.git</div></pre></td></tr></table></figure></li>
-<li>禁用 shell 登录：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 编辑/etc/passwd文件</div><div class="line">git:x:1001:1001:,,,:/home/git:/bin/bash # 修改成下面的内容</div><div class="line">git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</div></pre></td></tr></table></figure></li>
-<li>克隆远程仓库，在各自的电脑上运行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git@server:/srv/sample.git</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>作者：驭风者<br>链接：<a href="https://zhuanlan.zhihu.com/p/25892137" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25892137</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
-
+            <p><p><img src="https://pic3.zhimg.com/v2-08109c618d76d2f7cbb3f6a4d36f30d2_b.jpg" alt=""><br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/28/git-command/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -322,7 +310,9 @@
 
 
 
-    <article id="post-edge-between-code-and-hardware" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-edge-between-code-and-hardware" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -354,15 +344,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。<br>突然我在想，在我点下鼠标，到风扇加速，这个过程中究竟发生了什么呢？<br>尝试走通这一过程中，我发现自己对代码和硬件的边界依然理解很模糊，查了几篇文章跟回答，在这里尝试分析一下：</p>
-<ol>
-<li>点击鼠标，触发微动，鼠标主板向USB口发送一个低电平(或者高电平，whatever)。</li>
-<li>USB口发送信号给主机端口</li>
-</ol>
-
+            <p><p>这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/27/edge-between-code-and-hardware/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -448,7 +436,9 @@
 
 
 
-    <article id="post-basic-http" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-basic-http" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -480,29 +470,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>之前看过一到面试题,需要尽可能的详细描述用户在浏览器中打开一个网页的过程,目前我把《HTTP权威指南》看到了第五章,在这里试着描述一下。</p>
-<p>这个过程可以说的很简单,也可以很复杂,我认为主要还是</p>
-<ol>
-<li>对HTTP乃至TCP/IP的理解</li>
-<li>对浏览器如何解析HTML、CSS、JS等资源的理解。<br>所以今天的描述只代表我目前的理解程度。</li>
-</ol>
-<hr>
-<ol>
-<li>用户打开浏览器,在地址栏输入目标地址,按下回车或点击按钮。</li>
-<li>浏览器接收目标地址,从目标地址(URL)中解析出方案(协议),端口号(默认80),以及可能会存在的查询条件。</li>
-<li>浏览器检查缓存表中是否存在对应IP,如果存在则直接获取IP,如果不存在则连接DNS域名解析服务器,获取对应IP。</li>
-<li>浏览器根据上一步获得的IP地址,开始尝试连接目标主机<br> 4.1 向目标主机发送一个40-80字节的TCP分组,带有一个SYN标志,用来说明这是一个连接请求<br> 4.2 如果一切顺利,目标服务器对一些连接参数进行计算,并返回一个TCP分组,这个分组中,存在SYN和ACK标志位,说明连接请求已经被接受<br> 4.3 浏览器向目标服务器发送一个TCP分组通知它连接已经建立</li>
-<li>TCP连接已经被建立,浏览器根据第二步中解析出的地址向目标服务器发送一个方法为 GET 的HTTP事务请求报文。</li>
-<li>目标服务器接受请求报文, 解析请求行, 并将解析出的报文缓存在内存中, 直到收到全部请求报文并足以解析理解其意义为止。</li>
-<li>如果一切顺利, 目标服务器解析请求报文完成, 将其中的URI映射到本地的对应地址, 并开始读取对应文件内容。</li>
-<li>目标服务器开始构建响应报文, 包含响应状态码, 响应首部, 以及响应主体(在这个分析案例中,相应主体应该存在并且为对应站点首页)</li>
-<li>浏览器收到响应报文, 并开始解析报文主体(这里已Chrome为例)<br> 9.1 呈现引擎(下文称为webkit)读取文档内容<br> 9.2 解析HTML文档, 转化各个节点, 构建DOM树结构<br> 9.3 解析内联CSS样式数据, 构建渲染树, 渲染树会包含多个带有视觉属性(如颜色和尺寸)的矩形。这些矩形的排列顺序就是它们将在屏幕上显示的顺序。<br> 9.4 对渲染树进行布局处理, 为每个节点分配一个应出现在屏幕上的确切坐标。<br> 9.5 webkit 遍历渲染树, 由浏览器的用户界面后端层将每个节点绘制出来。<br> 注意, 9.2-9.5是一个渐进式的过程, 为了提高用户体验, webkit并不会等待所有html内容都被解析完成后才进行绘制,而是解析一点绘制一点。</li>
-<li>如果当前页面存在其他请求(外部CSS文件、JS文件), 浏览器会对这些文件重复步骤5-9。(这些请求一般是同步发起的)。</li>
-</ol>
-
+            <p><p>之前看过一到面试题,需要尽可能的详细描述用户在浏览器中打开一个网页的过程,目前我把《HTTP权威指南》看到了第五章,在这里试着描述一下。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/23/basic-http/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -588,7 +562,9 @@
 
 
 
-    <article id="post-frontend-tech-stack" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-frontend-tech-stack" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -626,6 +602,7 @@
 <h4 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h4><h4 id="Browser-V8"><a href="#Browser-V8" class="headerlink" title="Browser(V8)"></a>Browser(V8)</h4><h4 id="Complier"><a href="#Complier" class="headerlink" title="Complier"></a>Complier</h4><h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -711,7 +688,9 @@
 
 
 
-    <article id="post-javascript-async-method" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-javascript-async-method" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -752,6 +731,7 @@
             
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -837,7 +817,9 @@
 
 
 
-    <article id="post-learn-jsonp" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-learn-jsonp" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -873,6 +855,7 @@
             
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -958,7 +941,9 @@
 
 
 
-    <article id="post-from-global-to-cmd-amd-to-ES6-module" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-from-global-to-cmd-amd-to-ES6-module" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -995,25 +980,17 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>为什么模块化对js很重要:</p>
+            <p><p>为什么模块化对js很重要:</p>
 <ul>
 <li>模块化鼓励开发者使用小的低耦合模块，提供清晰的接口，而不是大块的代码.</li>
 <li>有助于测试，因为模块可以被实现了相同接口的模拟模块替换，即使在运行时。</li>
-<li>提升了代码的可维护性，因为小的低耦合模块更易懂。</li>
-</ul>
-<hr>
-<p>Global<br>早期的前端开发,我们使用script标签引入JS,一个文件作为一个模块,模块接口被直接暴露在全局作用域下,也就是window对象。各个模块可以通过这个全局对象访问依赖,这种方式会造成全局作用域的变量名污染,多个script标签的顺序会影响每个模块(文件)的加载顺序,开发者需要自己解决模块对库或其他模块的依赖引入问题,项目越大,也就越难管理,明显不是一种好的解决方案。</p>
-<hr>
-<p>CMD/AMD<br>CMD即 Commonjs规范, 一个模块可以使用exports定义自己的导出, 使用require方法用于加载依赖, 这个方法是同步的。<br>这种规范主要被nodejs所实现, 他的好处在于可以更好的组织模块, 重用代码, 并且在nodejs的依赖库(npm)里, 已经存在很多可以直接使用的模块, 但是这个规范使用同步的方式加载依赖, 适用于服务端, 在客户端则不适用。</p>
-<p>AMD即 异步模块定义, 主要被requirejs实现, 相对于Commonjs, 是专门为客户端提出的一种模块化定义, 提供了加载和定义模块的规范, 同时可以异步加载模块, 可以同步加载多个模块。这也是我早期主要实用的模块定义方案。</p>
-<hr>
-<p>ES6模块<br>是ECMAScript 2015提出的, js原生的模块化方案, 这个方案目前浏览器支持还不太好, 需要通过Babel进行转译。</p>
-<hr>
-<p>到了ES6模块这里,很多通用模块加载器出现了,比如Angularjs2.0使用的Systemjs以及Webpack, 他们都可以加载上面的所有模块定义。</p>
-
+<li>提升了代码的可维护性，因为小的低耦合模块更易懂。</p>
+            <p class="article-more-link">
+                <a href="/2017/03/03/from-global-to-cmd-amd-to-ES6-module/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -1099,7 +1076,9 @@
 
 
 
-    <article id="post-from-angular-to-aurelia-then-react" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-from-angular-to-aurelia-then-react" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -1136,17 +1115,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <blockquote>
-<p>待完成, 之前接触过Angular和Aurelia, 目前在学习React, 希望可以理顺这里的过程。</p>
-</blockquote>
-<ul>
-<li><a href="https://angular.cn/docs/ts/latest/" target="_blank" rel="external">Angularjs</a></li>
-<li><a href="http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/quick-start" target="_blank" rel="external">Aurelia</a></li>
-</ul>
-
+            <p><p>待完成, 之前接触过Angular和Aurelia, 目前在学习React, 希望可以理顺这里的过程。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/03/from-angular-to-aurelia-then-react/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -1232,7 +1207,9 @@
 
 
 
-    <article id="post-bitwise-operators" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-bitwise-operators" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -1269,19 +1246,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>源于看到了一段不是很懂得代码, 使用了按位或运算符。<br>hi , i’am here……<br>平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。</p>
-<p>位运算符包括 &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;, 分别是按位与, 按位或, 按位异或, 按位非, 左移, 有符号右移, 无符号右移</p>
-<p>需要注意的是几个移位运算符。<br>左移会将数值的所有位向左移动指定的位数。在左移后,原数值右侧空出的位由0填补。<br>左移一位其实就相当于将原数值乘以2,不会影响操作数的符号位。</p>
-<p>有符号右移会将数值向右移动,但保留符号位。在移位过程中,空缺位出现在原数值的左侧,符号位的右侧,用符号位的值来填充空位。<br>右移一位相当于原数除2后向下取整。</p>
-<p>无符号右移会将数值的所有32位都向右移动。对正数来说,无符号右移的结果和有符号相同,但是对负数来说就不一样了,无符号右移会把负数的符号位也进行移动,左边空出位置用0填充。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">-64</span>;</div><div class="line"><span class="built_in">console</span>.log(num &gt;&gt; <span class="number">5</span>); <span class="comment">// -2</span></div><div class="line"><span class="built_in">console</span>.log(num &gt;&gt;&gt; <span class="number">5</span>); <span class="comment">// 134217726 </span></div></pre></td></tr></table></figure>
-<hr>
-<p>一些适合用按位运算符的例子:</p>
-<figure class="highlight javascript"><figcaption><span>Math.floor()高性能版</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">~~<span class="number">14.71</span></div><div class="line"><span class="comment">// 14</span></div></pre></td></tr></table></figure>
-
+            <p><p>源于看到了一段不是很懂得代码, 使用了按位或运算符。<br>hi , i’am here……<br>平时在项目中很少会用到,最多用移位运算符进行加减运算,这次既然看到了就整理整理,在适合的地方用位运算符可以提高一些性能(显得很酷…)。<br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/02/bitwise-operators/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -1367,7 +1338,9 @@
 
 
 
-    <article id="post-need-to-know-in-ES6" class="article article-type-post" itemscope itemprop="blogPost">
+
+
+    <article id="post-need-to-know-in-ES6" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -1404,70 +1377,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <blockquote>
-<p>看了 阮一峰 的 <a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a>, 我从里面选择了一些我不太了解的点, 摘录后加入了一些自己的理解如下:</p>
-</blockquote>
-<h5 id="一-反射-Reflect-代理-Proxy"><a href="#一-反射-Reflect-代理-Proxy" class="headerlink" title="一.反射(Reflect) 代理(Proxy)"></a>一.反射(Reflect) 代理(Proxy)</h5><p>Reflect 和 Proxy 都是ES6新加入的操作对象的API,两者往往是配合使用。<br>Reflect 是一个静态对象,类似Math,主要提供了几个原本位于Object上的方法, 比如 defineProperty, assign, apply, 并对这些方法都做了优化, 例如Object.defineProperty(obj, name, desc)在无法定义属性时，会抛出一个错误，而Reflect.defineProperty(obj, name, desc)则会返回false。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 老写法</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="built_in">Object</span>.defineProperty(target, property, attributes);</div><div class="line">  <span class="comment">// success</span></div><div class="line">&#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">  <span class="comment">// failure</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 新写法</span></div><div class="line"><span class="keyword">if</span> (<span class="built_in">Reflect</span>.defineProperty(target, property, attributes)) &#123;</div><div class="line">  <span class="comment">// success</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">// failure</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>此外,某些Object操作是命令式，比如name in obj和delete obj[name]，而Reflect.has(obj, name)和Reflect.deleteProperty(obj, name)让它们变成了函数行为。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 老写法</span></div><div class="line"><span class="string">'assign'</span> <span class="keyword">in</span> <span class="built_in">Object</span> <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 新写法</span></div><div class="line"><span class="built_in">Reflect</span>.has(<span class="built_in">Object</span>, <span class="string">'assign'</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>最后, Reflect 可以和 Proxy配合使用, Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。这就让Proxy对象可以方便地调用对应的Reflect方法，完成默认行为，作为修改行为的基础。也就是说，不管Proxy怎么修改默认行为，你总可以在Reflect上获取默认行为。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Proxy</span>(target, &#123;</div><div class="line">  <span class="attr">set</span>: <span class="function"><span class="keyword">function</span>(<span class="params">target, name, value, receiver</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> success = <span class="built_in">Reflect</span>.set(target,name, value, receiver);</div><div class="line">    <span class="keyword">if</span> (success) &#123;</div><div class="line">      log(<span class="string">'property '</span> + name + <span class="string">' on '</span> + target + <span class="string">' set to '</span> + value);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> success;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>上面代码中，Proxy方法拦截target对象的属性赋值行为。它采用Reflect.set方法将值赋值给对象的属性，确保完成原有的行为，然后再部署额外的功能。</p>
-<p>这里就要说到 Proxy , Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。<br>Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。<br>Proxy也有些类似 重载, 如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;, &#123;</div><div class="line">  <span class="attr">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params">target, key, receiver</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`getting <span class="subst">$&#123;key&#125;</span>!`</span>);</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, key, receiver);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">set</span>: <span class="function"><span class="keyword">function</span> (<span class="params">target, key, value, receiver</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`setting <span class="subst">$&#123;key&#125;</span>!`</span>);</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, key, value, receiver);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>对Object的set/get方法设置代理实际上是重载了.运算符。</p>
-<p>ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target, handler);</div></pre></td></tr></table></figure></p>
-<p>Proxy 对象的所有用法，都是上面这种形式，不同的只是handler参数的写法。handle参数也是一个对象, 内部是对各种拦截行为的描述, 在上面的例子里, 就是set:function()/get:function(), 对不同的方法的拦截函数接收到的参数可能是不一样的:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//拦截对象属性的读取，比如proxy.foo和proxy['foo']。</span></div><div class="line"><span class="comment">//最后一个参数receiver是一个对象，可选</span></div><div class="line">get: <span class="function"><span class="keyword">function</span>(<span class="params">target, property, receiver</span>)</span></div><div class="line"><span class="title">set</span>: <span class="title">function</span>(<span class="params">target, property, value, receiver</span>)</div><div class="line">//<span class="title">apply</span>方法拦截函数的调用、<span class="title">call</span>和<span class="title">apply</span>操作。</div><div class="line"><span class="title">apply</span>: <span class="title">function</span>(<span class="params">target, thisBinding, args</span>)</div><div class="line">//<span class="title">construct</span>方法用于拦截<span class="title">new</span>命令</div><div class="line"><span class="title">construct</span>: <span class="title">function</span>(<span class="params">target, args</span>)</div><div class="line">// <span class="title">has</span>方法用来拦截<span class="title">HasProperty</span>操作，即判断对象是否具有某个属性时，这个方法会生效。典型的操作就是<span class="title">in</span>运算符。</div><div class="line"><span class="title">has</span>(<span class="params">target, propKey</span>)</div><div class="line"><span class="title">deleteProperty</span>(<span class="params">target, propKey</span>)</div><div class="line"><span class="title">ownKeys</span>(<span class="params">target</span>)</div><div class="line"><span class="title">getOwnPropertyDescriptor</span>(<span class="params">target, propKey</span>)</div><div class="line"><span class="title">defineProperty</span>(<span class="params">target, propKey, propDesc</span>)</div><div class="line"><span class="title">preventExtensions</span>(<span class="params">target</span>)</div><div class="line"><span class="title">getPrototypeOf</span>(<span class="params">target</span>)</div><div class="line"><span class="title">isExtensible</span>(<span class="params">target</span>)</div><div class="line"><span class="title">setPrototypeOf</span>(<span class="params">target, proto</span>)</div></pre></td></tr></table></figure></p>
-<p>下面是几个应用Proxy的例子:<br>1.使用get拦截，实现数组读取负数的索引。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createArray</span>(<span class="params">...elements</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> handler = &#123;</div><div class="line">    get(target, propKey, receiver) &#123;</div><div class="line">      <span class="keyword">let</span> index = <span class="built_in">Number</span>(propKey);</div><div class="line">      <span class="keyword">if</span> (index &lt; <span class="number">0</span>) &#123;</div><div class="line">        propKey = <span class="built_in">String</span>(target.length + index);</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, propKey, receiver);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">let</span> target = [];</div><div class="line">  target.push(...elements);</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target, handler);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> arr = createArray(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>);</div><div class="line">arr[<span class="number">-1</span>] <span class="comment">// c</span></div></pre></td></tr></table></figure></p>
-<p>2.使用get拦截，实现属性的链式操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pipe = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> funcStack = [];</div><div class="line">    <span class="keyword">var</span> oproxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125; , &#123;</div><div class="line">      <span class="attr">get</span> : <span class="function"><span class="keyword">function</span> (<span class="params">pipeObject, fnName</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (fnName === <span class="string">'get'</span>) &#123;</div><div class="line">          <span class="keyword">return</span> funcStack.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">val, fn</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> fn(val);</div><div class="line">          &#125;,value);</div><div class="line">        &#125;</div><div class="line">        funcStack.push(<span class="built_in">window</span>[fnName]);</div><div class="line">        <span class="keyword">return</span> oproxy;</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> oproxy;</div><div class="line">  &#125;</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="keyword">var</span> double = <span class="function"><span class="params">n</span> =&gt;</span> n * <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> pow    = <span class="function"><span class="params">n</span> =&gt;</span> n * n;</div><div class="line"><span class="keyword">var</span> reverseInt = <span class="function"><span class="params">n</span> =&gt;</span> n.toString().split(<span class="string">""</span>).reverse().join(<span class="string">""</span>) | <span class="number">0</span>;</div><div class="line"></div><div class="line">pipe(<span class="number">3</span>).double.pow.reverseInt.get; <span class="comment">// 63</span></div></pre></td></tr></table></figure></p>
-<p>这个例子里面我第一次看的时候有个不理解的地方:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reverseInt = <span class="function"><span class="params">n</span> =&gt;</span> n.toString().split(<span class="string">""</span>).reverse().join(<span class="string">""</span>) | <span class="number">0</span>;</div></pre></td></tr></table></figure><br>这里使用了按位或操作,用于处理对于像 10,20…这样的数进行反转的情况,如果不加这个运算符,处理数字10的结果如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reverseInt = <span class="function"><span class="params">n</span> =&gt;</span> n.toString().split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</div><div class="line"><span class="comment">// n = 10</span></div><div class="line"><span class="comment">// result = 01</span></div></pre></td></tr></table></figure><br>在这个结果的基础上加上按位或,结果会先被转换成二进制进行或操作,然后转换成整数,也就是<br>01 | 0 = 0x1 = 1。<br>之前我对位运算符不了解,看过这个例子之后专门去看了一下相关的文章,总结之后放在了<a href="/2017/03/02/bitwise-operators/">这里</a>。</p>
-<p>更多的例子可以直接去<a href="http://es6.ruanyifeng.com/#docs/proxy" target="_blank" rel="external">阮一峰的文章</a>里面去看。</p>
-<h5 id="二-模板字符串"><a href="#二-模板字符串" class="headerlink" title="二.模板字符串"></a>二.模板字符串</h5><p>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 普通字符串</span></div><div class="line"><span class="string">`In JavaScript '\n' is a line-feed.`</span></div><div class="line"></div><div class="line"><span class="comment">// 多行字符串</span></div><div class="line"><span class="string">`In JavaScript this is</span></div><div class="line"> not legal.`</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`string text line 1</span></div><div class="line">string text line 2`);</div><div class="line"></div><div class="line"><span class="comment">// 字符串中嵌入变量</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">"Bob"</span>, time = <span class="string">"today"</span>;</div><div class="line"><span class="string">`Hello <span class="subst">$&#123;name&#125;</span>, how are you <span class="subst">$&#123;time&#125;</span>?`</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。</li>
-<li>模板字符串中嵌入变量，需要将变量名写在${}之中, 大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性,<strong>还能调用函数</strong>。</li>
-<li>如果在模板字符串中需要使用反引号，则前面要用反斜杠转义。</li>
-<li>模板字符串甚至还能嵌套。</li>
-</ul>
-<p>一个使用模板字符串生成正式模板的例子:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 模板</span></div><div class="line"><span class="keyword">var</span> template = <span class="string">`</span></div><div class="line">&lt;ul&gt;</div><div class="line">  &lt;% for(var i=0; i &lt; data.supplies.length; i++) &#123; %&gt;</div><div class="line">    &lt;li&gt;&lt;%= data.supplies[i] %&gt;&lt;/li&gt;</div><div class="line">  &lt;% &#125; %&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">`;</div><div class="line"></div><div class="line"><span class="comment">// 模板编译函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compile</span>(<span class="params">template</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> evalExpr = <span class="regexp">/&lt;%=(.+?)%&gt;/g</span>;</div><div class="line">  <span class="keyword">var</span> expr = <span class="regexp">/&lt;%([\s\S]+?)%&gt;/g</span>;</div><div class="line"></div><div class="line">  template = template</div><div class="line">    .replace(evalExpr, <span class="string">'`); \n  echo( $1 ); \n  echo(`'</span>)</div><div class="line">    .replace(expr, <span class="string">'`); \n $1 \n  echo(`'</span>);</div><div class="line"></div><div class="line">  template = <span class="string">'echo(`'</span> + template + <span class="string">'`);'</span>;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> script =</div><div class="line">  <span class="string">`(function parse(data)&#123;</span></div><div class="line">    var output = "";</div><div class="line"></div><div class="line">    function echo(html)&#123;</div><div class="line">      output += html;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="subst">$&#123; template &#125;</span></div><div class="line"></div><div class="line">    return output;</div><div class="line">  &#125;)`;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> script;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 使用</span></div><div class="line"><span class="keyword">var</span> parse = <span class="built_in">eval</span>(compile(template));</div><div class="line">div.innerHTML = parse(&#123; <span class="attr">supplies</span>: [ <span class="string">"broom"</span>, <span class="string">"mop"</span>, <span class="string">"cleaner"</span> ] &#125;);</div><div class="line"></div><div class="line"><span class="comment">//   &lt;ul&gt;</span></div><div class="line"><span class="comment">//     &lt;li&gt;broom&lt;/li&gt;</span></div><div class="line"><span class="comment">//     &lt;li&gt;mop&lt;/li&gt;</span></div><div class="line"><span class="comment">//     &lt;li&gt;cleaner&lt;/li&gt;</span></div><div class="line"><span class="comment">//   &lt;/ul&gt;</span></div></pre></td></tr></table></figure>
-<p>后面关于标签模板的部分我认为暂时没有什么应用场景, 所以先略过。</p>
-<h5 id="三-异步编程-Promise-Generator-async"><a href="#三-异步编程-Promise-Generator-async" class="headerlink" title="三.异步编程 Promise, Generator, async"></a>三.异步编程 Promise, Generator, async</h5><p>Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。它由社区最早提出和实现，ES6将其写进了语言标准，统一了用法，原生提供了Promise对象。<br>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。<br>Promise对象有以下两个特点。</p>
-<ul>
-<li><p>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和Rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。</p>
-</li>
-<li><p>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从Pending变为Resolved和从Pending变为Rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。就算改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p>
-</li>
-</ul>
-<p>有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。</p>
-<p>Promise也有一些缺点。首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。第三，当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
-<p>如果某些事件不断地反复发生，一般来说，使用 stream 模式是比部署Promise更好的选择。</p>
-<hr>
-<p>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。<br>Generator 函数有多种理解角度。从语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。<br>执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。<br>形式上，Generator 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield语句，定义不同的内部状态（yield在英语里的意思就是“产出”）。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</div><div class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> hw = helloWorldGenerator();</div></pre></td></tr></table></figure></p>
-<p>上面代码定义了一个Generator函数helloWorldGenerator，它内部有两个yield语句“hello”和“world”，即该函数有三个状态：hello，world和return语句（结束执行）。</p>
-<p>然后，Generator函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用Generator函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象，也就是上一章介绍的遍历器对象（Iterator Object）。</p>
-<p>下一步，必须调用遍历器对象的next方法，使得指针移向下一个状态。也就是说，每次调用next方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个yield语句（或return语句）为止。换言之，Generator函数是分段执行的，yield语句是暂停执行的标记，而next方法可以恢复执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: 'hello', done: false &#125;</span></div><div class="line"></div><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: 'world', done: false &#125;</span></div><div class="line"></div><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: 'ending', done: true &#125;</span></div><div class="line"></div><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: undefined, done: true &#125;</span></div></pre></td></tr></table></figure><br>上面代码一共调用了四次next方法。</p>
-<p>第一次调用，Generator函数开始执行，直到遇到第一个yield语句为止。next方法返回一个对象，它的value属性就是当前yield语句的值hello，done属性的值false，表示遍历还没有结束。</p>
-<p>第二次调用，Generator函数从上次yield语句停下的地方，一直执行到下一个yield语句。next方法返回的对象的value属性就是当前yield语句的值world，done属性的值false，表示遍历还没有结束。</p>
-<p>第三次调用，Generator函数从上次yield语句停下的地方，一直执行到return语句（如果没有return语句，就执行到函数结束）。next方法返回的对象的value属性，就是紧跟在return语句后面的表达式的值（如果没有return语句，则value属性的值为undefined），done属性的值true，表示遍历已经结束。</p>
-<p>第四次调用，此时Generator函数已经运行完毕，next方法返回对象的value属性为undefined，done属性为true。以后再调用next方法，返回的都是这个值。</p>
-<p>总结一下，调用Generator函数，返回一个遍历器对象，代表Generator函数的内部指针。以后，每次调用遍历器对象的next方法，就会返回一个有着value和done两个属性的对象。value属性表示当前的内部状态的值，是yield语句后面那个表达式的值；done属性是一个布尔值，表示是否遍历结束。</p>
-<hr>
-<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。<br>async 函数是什么？一句话，它就是 Generator 函数的语法糖。<br>async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await，仅此而已。</p>
-<p>async函数对 Generator 函数的改进，体现在以下四点。</p>
-<ul>
-<li><p>内置执行器。<br>  Generator 函数的执行必须靠执行器，所以才有了co模块，而async函数自带执行器。也就是说，async函数的执行，与普通函数一模一样，只要一行。<br>  var result = asyncReadFile();<br>  上面的代码调用了asyncReadFile函数，然后它就会自动执行，输出最后结果。这完全不像 Generator 函数，需要调用next方法，或者用co模块，才能真正执行，得到最后结果。</p>
-</li>
-<li><p>更好的语义。<br>  async和await，比起星号和yield，语义更清楚了。async表示函数里有异步操作，await表示紧跟在后面的表达式需要等待结果。</p>
-</li>
-<li><p>更广的适用性。<br>  co模块约定，yield命令后面只能是 Thunk 函数或 Promise 对象，而async函数的await命令后面，可以是Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</p>
-</li>
-<li><p>返回值是 Promise。<br>  async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作。</p>
-</li>
-</ul>
-<p>进一步说，async函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而await命令就是内部then命令的语法糖。</p>
-
+            <p><p>看了 阮一峰 的 <a href="http://es6.ruanyifeng.com/">ECMAScript 6 入门</a>, 我从里面选择了一些我不太了解的点, 摘录后加入了一些自己的理解如下:<br></p>
+            <p class="article-more-link">
+                <a href="/2017/03/02/need-to-know-in-ES6/#more">查看更多</a>
+            </p>
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -1550,6 +1466,8 @@
     </div>
     
 </article>
+
+
 
 
 

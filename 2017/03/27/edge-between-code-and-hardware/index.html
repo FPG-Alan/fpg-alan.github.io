@@ -5,22 +5,16 @@
     
     <title>代码和硬件的边界 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。突然我在想，在我点下鼠标，到风扇加速，这个过程中究竟发生了什么呢？尝试走通这一过程中，我发现自己对代码和硬件的边界依然理解很模糊，查了几篇文章跟回答，在这里尝试分析一下：
-
-点击鼠标，触">
+    <meta name="description" content="这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码和硬件的边界">
 <meta property="og:url" content="https://fpg-alan.github.io/2017/03/27/edge-between-code-and-hardware/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。突然我在想，在我点下鼠标，到风扇加速，这个过程中究竟发生了什么呢？尝试走通这一过程中，我发现自己对代码和硬件的边界依然理解很模糊，查了几篇文章跟回答，在这里尝试分析一下：
-
-点击鼠标，触">
-<meta property="og:updated_time" content="2017-03-27T09:19:39.000Z">
+<meta property="og:description" content="这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。">
+<meta property="og:updated_time" content="2017-03-29T08:03:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码和硬件的边界">
-<meta name="twitter:description" content="这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。突然我在想，在我点下鼠标，到风扇加速，这个过程中究竟发生了什么呢？尝试走通这一过程中，我发现自己对代码和硬件的边界依然理解很模糊，查了几篇文章跟回答，在这里尝试分析一下：
-
-点击鼠标，触">
+<meta name="twitter:description" content="这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。">
     
 
     
@@ -187,7 +181,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-edge-between-code-and-hardware" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-edge-between-code-and-hardware" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -220,7 +214,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。<br>突然我在想，在我点下鼠标，到风扇加速，这个过程中究竟发生了什么呢？<br>尝试走通这一过程中，我发现自己对代码和硬件的边界依然理解很模糊，查了几篇文章跟回答，在这里尝试分析一下：</p>
+            <p>这天中午突然发现笔记本的温度有些高，达到了70度，我点开istat menu，调整了风扇转速，从auto设置到high，在我点下鼠标后1S之内，风扇转速开始上升起来，明显能听到风扇的噪音了，整机的温度也慢慢降下来。<br><a id="more"></a><br>突然我在想，在我点下鼠标，到风扇加速，这个过程中究竟发生了什么呢？<br>尝试走通这一过程中，我发现自己对代码和硬件的边界依然理解很模糊，查了几篇文章跟回答，在这里尝试分析一下：</p>
 <ol>
 <li>点击鼠标，触发微动，鼠标主板向USB口发送一个低电平(或者高电平，whatever)。</li>
 <li>USB口发送信号给主机端口</li>
@@ -228,6 +222,7 @@
 
         
         </div>
+        
         <footer class="article-footer">
             <div class="share-container">
 
@@ -332,6 +327,8 @@
 
     
 </article>
+
+
 
 
     

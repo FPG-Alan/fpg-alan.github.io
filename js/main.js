@@ -1,5 +1,15 @@
 (function($){
     var toTop = ($('#sidebar').height() - $(window).height()) + 60;
+    
+    var $firstArticle = $($('article')[0]);
+    var $body = $('body');
+    if($firstArticle.hasClass('article-index')){
+        $body.addClass('index');
+    }else{
+        $body.addClass('post');
+    }
+
+    // console.log($(firstArticle).hasClass('article-index'));
     // Caption
     $('.article-entry').each(function(i) {
         $(this).find('img').each(function() {
@@ -32,6 +42,7 @@
     }
 
     // Profile card
+    // show/hide profile card...
     $(document).on('click', function () {
         $('#profile').removeClass('card');
     }).on('click', '#profile-anchor', function (e) {
