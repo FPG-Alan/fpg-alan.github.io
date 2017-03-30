@@ -205,7 +205,7 @@
         }
     }
 
-    $.getJSON(CONFIG.CONTENT_URL, function (json) {
+   /* $.getJSON(CONFIG.CONTENT_URL, function (json) {
         if (location.hash.trim() === '#ins-search') {
             $main.addClass('show');
         }
@@ -214,7 +214,7 @@
             searchResultToDOM(search(json, keywords));
         });
         $input.trigger('input');
-    });
+    });*/
 
 
     $(document).on('click focus', '.search-form-input', function () {
