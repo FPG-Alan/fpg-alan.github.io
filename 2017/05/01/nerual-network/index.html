@@ -3,20 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>神经网络学习总结 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
+    <meta name="description" content="整个四月份在学习神经网络,今天来进行一下归纳总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+<meta property="og:title" content="神经网络学习总结">
+<meta property="og:url" content="https://fpg-alan.github.io/2017/05/01/nerual-network/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="整个四月份在学习神经网络,今天来进行一下归纳总结。">
+<meta property="og:updated_time" content="2017-05-01T03:58:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="神经网络学习总结">
+<meta name="twitter:description" content="整个四月份在学习神经网络,今天来进行一下归纳总结。">
     
 
     
@@ -183,7 +181,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-nerual-network" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -191,7 +189,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+            神经网络学习总结
         </h1>
     
 
@@ -200,8 +198,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2017/05/01/nerual-network/">
+            <time datetime="2017-05-01T02:35:54.000Z" itemprop="datePublished">2017-05-01</time>
         </a>
     </div>
 
@@ -210,7 +208,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/nerual-network/">nerual network</a>
     </div>
 
                     </div>
@@ -221,15 +219,32 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
+            <p>整个四月份在学习神经网络,今天来进行一下归纳总结。</p>
+<a id="more"></a> 
+<p>首先我想尝试描述一下，什么是神经网络，它的本质是什么。</p>
+<p>从生物角度来说：<br>类比人脑，计算机看事物跟人是不一样的，但这过程中可以抽象出来一致的点，两者都是通过学习，一步步认知某个东西究竟是什么。<br>所以重点在于，如何重现这个学习的过程。<br>人脑拥有大量神经元，之间通过树突和轴突互联，通过神经元细胞模上的蛋白质通道开关，调节膜内外Na，Ka粒子浓度，以形成电压差，进而形成电流传递信号，信号到达轴突终端，触发释放神经递质，引起相连的后续神经元的兴奋或抑制。<br>这过程中很多细节我并不清楚，大体来说就是后续神经元对某种信号表现出的兴奋或抑制的行为，最终汇总到一起，完成人脑对某种输入信息的反馈，因此人脑的学习过程也就是神经元对某种信号的兴奋还是抑制的调整，至于如何调整，向什么方向调整，我想应该是取决于某次对输入信息的反馈的反馈，换句话来说，这当中应该存在某种负反馈机制，可以让大脑分辨某次反馈是否达到了预期，达到了则加强兴奋，反之则加强抑制。</p>
+<p>神经网络，可以看做是上面的过程的一种模拟，重要的是实现某种代价函数，让整个网络可以衡量某次反馈的正确程度，因此才能对应调整每个线路上的权重大小，也就是学习的过程。</p>
+<p>因此我认为，神经网络是一个对大脑的模拟，同样实现了类神经元的兴奋/抑制机制。通过构造权重相关的代价函数，并对这个函数实施梯度下降，同样实现了类神经元的负反馈机制，可以自发调整神经网络中的每个权重，最终让神经网络对某类输入形成我们希望的反馈，就像大脑学会认识某种概念。</p>
+<p>从数学角度来说：<br>这个角度上，我现在可以说的还不多，程度还不够。<br>以分类任务来说，神经网络所做的实际对把输入空间进行某种扭曲，包括平移，缩放，旋转，升维，最终找到一条线(若输入空间线性可分)，或是一个超平面，可以把输入空间一分为二，一旦找到这个分割线/面，神经网络也就可以对后续输入做出预测。</p>
 <hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
+<p>我的学习目标和学习过程(这就是个流水账,主要是想优化学习方式):<br>目标:了解神经网络,学会使用tensorflow,学习如何进行图片分类,最后掌握如何对图片进行语义分割。<br>学习过程:<br>第一周第一天:<br>先笼统了解了一下几个关键词的相关概念,对比如机器学习,深度学习,神经网络有了一些基础认知。<br>看了Tensorfow的官方教程，按照教程配置了docker环境，然而发现基本上看不懂。。。</p>
+<p>第一周第二天:<br>决定先放弃Tensorflow,转而补充基础知识,先看了 <a href="https://www.gitbook.com/book/yjango/superorganism/details" target="_blank" rel="external">超智能体</a><br>从这本书里看到了更多的基础信息,由此又转到了 <a href="http://colah.github.io/" target="_blank" rel="external">colah’s blog</a>,精读了<a href="http://colah.github.io/posts/2015-08-Backprop/" target="_blank" rel="external">Calculus on Computational Graphs: Backpropagation</a>一文,感觉大受启发,其后又间断的看了colah blog上的其他文章,均有收获。</p>
+<p>第一周第三天:<br>超智能体看到了人工智能章节,决定先放一放,去补充一些数学知识先。。。</p>
+<p>第一周第三天到第二周第二天:<br>回顾线性代数,主要是矩阵运算<br>回顾高等数学,主要是微积分</p>
+<p>第二周第三天:<br>不知道从什么地方了解到元胞自动机,这一天花费在这个上面,主要了解了初等元胞自动机,还尝试了一下生命游戏,很有意思!</p>
+<p>第二周第四天:<br>继续超智能体, 看完了梯度下降训练法小节, 转到文章介绍的<a href="http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/" target="_blank" rel="external">IMPLEMENTING A NEURAL NETWORK FROM SCRATCH IN PYTHON</a>, 按照教程,一步步实现了自己的第一个线性回归神经网络。</p>
+<p>第二周第五天到第三周第一天:<br>在超智能体中到达了神经网络的章节,发现自己依然存在理解困难,于是转到 coursera 参加了他们的机器学习课程,由<a href="https://www.coursera.org/instructor/andrewng" target="_blank" rel="external">Andrew Ng</a>主讲，这个是大牛了,讲的课程也很浅显易懂,听完第一周的课程并且都满分通过了考试,感觉自己终于理解线性回归神经网络了。</p>
+<p>第三周第二天:<br>看完了超智能体, 又转回到Tensorflow, 这次果然轻松很多, 按照官网教程, 使用Tensorflow完成了第一个线性回归神经网络, 用于MNIST手写数字识别。<br>我发现Tensroflow把很多细节都隐藏起来了, 不需要我自己关注如何进行梯度下降, 如何优化算法。<br>但对Tensorflow的语法还是有很多不明白的地方。</p>
+<p>第三周第三天:<br>开始看卷积神经网络, 在这之前我所接触的都是全连接神经网络, 不适合于图片分类任务(全连接参数太多)。<br>首先看的是Tensorflow教程, 好的没错, 又看不懂。</p>
+<p>第三周第四天:<br>看了<a href="http://www.open-open.com/lib/view/open1425626861103.html" target="_blank" rel="external">一文读懂卷积神经网络</a>, 大致了解了什么是卷积, 什么是池化, 并在这里<a href="http://scs.ryerson.ca/~aharley/vis/conv/" target="_blank" rel="external">3D Visualization of a Convolutional Neural Network</a>建立了对卷积神经网络的直观印象。</p>
+<p>第三周第五天到第四周第三天:<br>看了斯坦福的cs231课程关于卷积网络部分的笔记<a href="http://cs231n.github.io/understanding-cnn/" target="_blank" rel="external">CS231n Convolutional Neural Networks for Visual Recognition</a>,并在网易云课堂看了<a href="http://study.163.com/course/courseMain.htm?courseId=1003223001" target="_blank" rel="external">课程的录像</a></p>
+<p>第四周第四天:<br>按照Tensorflow的教程,完成了第一个卷积神经网络,依然用于识别MNIST手写字体。</p>
+<p>第四周第五天:<br>学习了如何保存Tensorflow训练之后的模型,以及如何读取使用这个模型,使用第四天建立的模型进行了2000次训练，得到了准确度94%的神经网络,并用这个神经网络识别了我自己的手写字体。<br>这里有点需要注意,自己的手写字体需要经过层层转化才能被神经网络识别,具体如下:<br>1.在纯色背景写字<br>2.拍照(或扫描),存入电脑<br>3.使用python pillow库对图片做预处理,这一步由同事帮我完成(感谢素素~)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image,ImageEnhance,ImageOps</div><div class="line">im = Image.open(<span class="string">'images/0/WechatIMG3.png'</span>)</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">processImage</span><span class="params">(im)</span>:</span></div><div class="line">    im = im.convert(<span class="string">"L"</span>)</div><div class="line"></div><div class="line">    im = ImageEnhance.Brightness(im)</div><div class="line">    im = im.enhance(<span class="number">2.0</span>)</div><div class="line">    im = ImageEnhance.Contrast(im)</div><div class="line">    im = im.enhance(<span class="number">2.0</span>)</div><div class="line">    im = ImageEnhance.Sharpness(im)</div><div class="line">    im = im.enhance(<span class="number">5.0</span>)</div><div class="line"></div><div class="line">    im = ImageOps.invert(im)</div><div class="line">    <span class="keyword">return</span> im</div><div class="line"></div><div class="line">im = processImage(im)</div><div class="line">im.save(<span class="string">'result1.png'</span>)</div></pre></td></tr></table></figure><br>主要包括亮度对比度调节和锐化,最后反转,这些都是为了提取主要特征,弱化背景噪点。</p>
+<p>4.使用这个库<a href="https://github.com/gskielian/JPG-PNG-to-MNIST-NN-Format" target="_blank" rel="external">JPG-PNG-to-MNIST-NN-Format</a>对图片做进一步处理,主要包括:<br>裁切图像到MNIST标准(28*28)<br>把图片转换为二进制文件。</p>
+<p>5.在Tensorflow模型内导入这个文件,执行一次神经网络。注意这里不需要初始化变量，也不需要把代价函数和梯度下降引入计算图。</p>
+<p>以上就是这一个月来的流水账了,其中有很多时候走了弯路,并且因为基础知识不足,也浪费了不少时间去死磕不懂的地方,后来发现绕个弯去补充一下基础知识会更加的事半功倍,比如在学习卷积网络的时候, 如果能一开始就从cs231n看起会快很多, 也就不会去stackoverflow上问些蠢问题了。。。</p>
 <hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
+<p>以上就是一个月神经网络的学习过程了, 这一个月对我来说确实有点煎熬, 但同时也一直很亢奋, 但现在的进度还很差, 堪堪算是入门吧。。。<br>接下来我的计划:<br>1.继续tensorflow教程, 完成cifar-10训练。<br>2.继续cs231n课程,了解全卷积网络,了解语义分割。<br>3.看懂<a href="https://arxiv.org/abs/1605.06211" target="_blank" rel="external">Fully Convolutional Networks for Semantic Segmentation</a><br>4.掌握这个项目<a href="https://github.com/MarvinTeichmann/KittiSeg" target="_blank" rel="external">A Kitti Road Segmentation model implemented in tensorflow.</a></p>
 
         
         </div>
@@ -241,7 +256,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj0vryqfe000ey1j7nk6qjn1k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/05/01/nerual-network/" data-id="cj25iji01000052j776pjvjfl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,15 +331,11 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    ES6里需要了解的新内容
-                
-            </div>
-        </a>
     
+        <a href="/2017/03/28/git-command/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Git命令总结(转自知乎)</div>
+        </a>
     
 </nav>
 
