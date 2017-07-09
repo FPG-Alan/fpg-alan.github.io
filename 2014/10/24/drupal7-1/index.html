@@ -3,20 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>Drupal7 学习笔记之执行流程(一)——路由分发阶段 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
+    <meta name="description" content="在index.php中，前三行用来启动Drupal内核系统,到这里,整个Drupal7 内核已经加载完毕。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+<meta property="og:title" content="Drupal7 学习笔记之执行流程(一)——路由分发阶段">
+<meta property="og:url" content="https://fpg-alan.github.io/2014/10/24/drupal7-1/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="在index.php中，前三行用来启动Drupal内核系统,到这里,整个Drupal7 内核已经加载完毕。">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/41251537-d97e-4b4f-b2c9-85846de734e6">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/cd7345f1-09f8-4250-8cae-bf92f07e00b6">
+<meta property="og:updated_time" content="2017-07-09T06:11:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="Drupal7 学习笔记之执行流程(一)——路由分发阶段">
+<meta name="twitter:description" content="在index.php中，前三行用来启动Drupal内核系统,到这里,整个Drupal7 内核已经加载完毕。">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s38/res/41251537-d97e-4b4f-b2c9-85846de734e6">
     
 
     
@@ -183,7 +184,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-drupal7-1" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -191,7 +192,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+            Drupal7 学习笔记之执行流程(一)——路由分发阶段
         </h1>
     
 
@@ -200,8 +201,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2014/10/24/drupal7-1/">
+            <time datetime="2014-10-23T16:00:00.000Z" itemprop="datePublished">2014-10-24</time>
         </a>
     </div>
 
@@ -210,7 +211,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
     </div>
 
                     </div>
@@ -221,15 +222,21 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
+            <p>在index.php中，前三行用来启动Drupal内核系统,到这里,整个Drupal7 内核已经加载完毕。<br><a id="more"></a><br>第4行，开始获取用户请求的路径，并且进行路由分发<br><img src="https://app.yinxiang.com/shard/s38/res/41251537-d97e-4b4f-b2c9-85846de734e6" alt=""></p>
 <hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
+<p>路由部分可以说是Drupal7的心脏，所有的页面请求都从这里开始知道渲染出最终页面呈现在浏览器上<br>Drupal7的路由系统位于includes/menu.inc，这里的命名可能会使人混淆，menu在这里并不是通常理解的菜单或者是导航栏什么的，其实这里的menu等同于router<br>Drupal7的菜单模块位于modules/menu下(⊙o⊙)…</p>
+<p>menu.inc -&gt; menu_execute_active_handler()</p>
+<p><img src="https://app.yinxiang.com/shard/s38/res/cd7345f1-09f8-4250-8cae-bf92f07e00b6" alt=""></p>
+<p>510行，得到站点当前状态(在线/不在线)</p>
+<p>515行，得到当前请求路径</p>
+<p>516行，执行’hook_menu_site_status_alter’钩子，所有实现了这个钩子的模块可以在此时s实现对系统变量的自定义修改。<br>此处的drupal_alter函数处于module.inc文件中，关于drupal_alter函数参见Drupal7 学习笔记之杂项 drupal_alter()。</p>
+<p>519行，如果当前站点的状态是在线的，由menu_get_item()函数得到$router_item,包含了<br>path、load_functions、to_arg_functions、access_callback、page_callback、access_arguments、page_callback、page_arguments、delivery_callback、theme_callback、theme_arguments等等信息</p>
+<p>521行，判断当前用户对这个路由是否有访问权限以及这个路由是否包含了其他文件，如果有，在523行进行加载。</p>
+<p>525行，使用PHP的call_user_func_array()函数调用了当前路由的page_callback()函数，并传递参数</p>
+<blockquote>
+<p>2014.10.23 – $router_item[‘page_arguments’],这里$router_item[‘page_arguments’]比较重要，将会在下一节深入研究。</p>
+</blockquote>
+<p>页面具体内容，将在当前路由中引用的page_callback()函数中处理生成。</p>
 
         
         </div>
@@ -241,7 +248,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj4w9e5zq000l7xj7l3gesoq8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/24/drupal7-1/" data-id="cj4wa14j0000x7xj78c0ngiwy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,19 +323,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2014/10/25/drupal7-2/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    ES6里需要了解的新内容
+                    Drupal7 学习笔记之执行流程(二)——路由分发阶段
                 
             </div>
         </a>
     
     
-        <a href="/2014/11/08/drupal7-project/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2014/10/23/drupal7-0/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 项目经验 Ajax+pushData 无刷新加载</div>
+            <div class="article-nav-title">Drupal7 学习笔记之执行流程(零)——核心启动阶段</div>
         </a>
     
 </nav>

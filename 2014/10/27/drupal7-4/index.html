@@ -3,20 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>Drupal7 学习笔记之执行流程(五)——请求响应阶段 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
+    <meta name="description" content="前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+<meta property="og:title" content="Drupal7 学习笔记之执行流程(五)——请求响应阶段">
+<meta property="og:url" content="https://fpg-alan.github.io/2014/10/27/drupal7-4/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/bfa3272c-3766-4ca1-8c10-b42a0ac01da2">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/69f90900-6a24-4fee-bad2-a41e69998a67">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/9141c1a0-8658-47bd-bed7-f8f52c0583fb">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/83b830e1-3444-4f67-9a2c-24bd0d97576e">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/5d96c65a-3a6c-44f1-a8a4-0900b5e82244">
+<meta property="og:updated_time" content="2017-07-09T06:18:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="Drupal7 学习笔记之执行流程(五)——请求响应阶段">
+<meta name="twitter:description" content="前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s38/res/bfa3272c-3766-4ca1-8c10-b42a0ac01da2">
     
 
     
@@ -183,7 +187,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-drupal7-4" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -191,7 +195,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+            Drupal7 学习笔记之执行流程(五)——请求响应阶段
         </h1>
     
 
@@ -200,8 +204,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2014/10/27/drupal7-4/">
+            <time datetime="2014-10-26T16:00:00.000Z" itemprop="datePublished">2014-10-27</time>
         </a>
     </div>
 
@@ -210,7 +214,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
     </div>
 
                     </div>
@@ -221,15 +225,15 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
+            <p>前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：<br><a id="more"></a><br><img src="https://app.yinxiang.com/shard/s38/res/bfa3272c-3766-4ca1-8c10-b42a0ac01da2" alt=""><br>menu_execute_active_handler函数的最后一步<br>如果需要投递页面，则首先检查路由项中有无模块设定的投递函数，然后调用drupal_deliver_page函数，此函数位于common.inc文件中。<br>如果不需要投递，则直接返回原始内容<br>$deliver参数默认是TRUE，一般情况下都是需要投递页面的。<br>下面看看drupal_deliver_page函数:<br><img src="https://app.yinxiang.com/shard/s38/res/69f90900-6a24-4fee-bad2-a41e69998a67" alt=""><br>2549行到2552行，确定投递函数，默认是drupal_deliver_html_page，有两种方式可以更改投递函数:<br>1.在模块的hook_menu() 或 hook_menu_alter()钩子函数中设置’delivery callback’ 字段<br>2.在每个请求中实现hook_page_delivery_callback_alter() 钩子</p>
+<p>2555行，即调用上文说的hook_page_delivery_callback_alter()钩子，此时是这次请求中最后一次替换投递函数的机会。</p>
+<p>在确定投递函数之后，检查投递函数是否存在，存在则执行，不存在则记录一个错误。</p>
+<p>接下来看看默认的投递函数drupal_deliver_html_page:<br>第一部分<br><img src="https://app.yinxiang.com/shard/s38/res/9141c1a0-8658-47bd-bed7-f8f52c0583fb" alt=""></p>
+<p>2584行，有响应内容的情况下，如果还没有Content-Type,加上Content-Type</p>
+<p>2589行，设定页面语言</p>
 <hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
+<p>第二部分<br><img src="https://app.yinxiang.com/shard/s38/res/83b830e1-3444-4f67-9a2c-24bd0d97576e" alt=""><br>这部分主要进行错误处理，如果响应内容是整数，则根据错误类型分别进行处理<br>第三部分<br><img src="https://app.yinxiang.com/shard/s38/res/5d96c65a-3a6c-44f1-a8a4-0900b5e82244" alt=""><br>如果没有错误，且有响应内容，使用drupal_render_page函数对整个响应内容进行渲染</p>
+<p>现在已经来到了指令流程分析的最后一个部分，页面渲染阶段了。</p>
 
         
         </div>
@@ -241,7 +245,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj4w9e5zq000l7xj7l3gesoq8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/27/drupal7-4/" data-id="cj4wbre8d00137xj7emayd0lk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,19 +320,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2014/10/28/drupal7-5/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    ES6里需要了解的新内容
+                    Drupal7 学习笔记之执行流程(六)——页面渲染阶段
                 
             </div>
         </a>
     
     
-        <a href="/2014/11/08/drupal7-project/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2014/10/26/drupal7-3/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 项目经验 Ajax+pushData 无刷新加载</div>
+            <div class="article-nav-title">Drupal7 学习笔记之执行流程(四)——请求响应阶段</div>
         </a>
     
 </nav>

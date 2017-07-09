@@ -3,20 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>归档: 2014/10 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+    <meta name="description" content="Personal Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unspecified">
+<meta property="og:url" content="https://fpg-alan.github.io/archives/2014/10/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="Personal Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="Unspecified">
+<meta name="twitter:description" content="Personal Blog">
     
 
     
@@ -183,168 +180,262 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+            <section id="main"><div class="timeline timeline-wrap">
+    
+            <div class="timeline-row timeline-row-major">
+                <span class="node"><i class="fa fa-calendar"></i></span>
+                <h1 class="title">2014</h1>
+            </div>
         
-        
-            <header class="article-header">
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/29/drupal7-6/">Drupal7 学习笔记之执行流程(七)——页面渲染阶段</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2014/10/29/drupal7-6/">
+            <time datetime="2014-10-28T16:00:00.000Z" itemprop="datePublished">2014-10-29</time>
         </a>
     </div>
 
 
-                        
-                        
+                    
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
-<hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
-
-        
-        </div>
-        
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj4w9e5zq000l7xj7l3gesoq8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    ES6里需要了解的新内容
-                
+                </div>
             </div>
+        </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
+    
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/28/drupal7-5/">Drupal7 学习笔记之执行流程(六)——页面渲染阶段</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/28/drupal7-5/">
+            <time datetime="2014-10-27T16:00:00.000Z" itemprop="datePublished">2014-10-28</time>
         </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
     
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
     
-        <a href="/2014/11/08/drupal7-project/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 项目经验 Ajax+pushData 无刷新加载</div>
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/27/drupal7-4/">Drupal7 学习笔记之执行流程(五)——请求响应阶段</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/27/drupal7-4/">
+            <time datetime="2014-10-26T16:00:00.000Z" itemprop="datePublished">2014-10-27</time>
         </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
     
-</nav>
-
-
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
     
-</article>
-
-
-
-
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/26/drupal7-3/">Drupal7 学习笔记之执行流程(四)——请求响应阶段</a>
+        </h1>
     
-   
-    
-   
 
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/26/drupal7-3/">
+            <time datetime="2014-10-25T16:00:00.000Z" itemprop="datePublished">2014-10-26</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
+    
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/25/drupal7-2/">Drupal7 学习笔记之执行流程(二)——路由分发阶段</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/25/drupal7-2/">
+            <time datetime="2014-10-24T16:00:00.000Z" itemprop="datePublished">2014-10-25</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
+    
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/24/drupal7-1/">Drupal7 学习笔记之执行流程(一)——路由分发阶段</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/24/drupal7-1/">
+            <time datetime="2014-10-23T16:00:00.000Z" itemprop="datePublished">2014-10-24</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
+    
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/23/drupal7-0/">Drupal7 学习笔记之执行流程(零)——核心启动阶段</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/23/drupal7-0/">
+            <time datetime="2014-10-22T16:00:00.000Z" itemprop="datePublished">2014-10-23</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
+    
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2014/10/20/drupal7-hook/">Drupal7 Hook</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/20/drupal7-hook/">
+            <time datetime="2014-10-19T16:00:00.000Z" itemprop="datePublished">2014-10-20</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    
+</div>
 </section>
             
                 <aside id="sidebar">

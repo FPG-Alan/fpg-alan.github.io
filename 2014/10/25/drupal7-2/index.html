@@ -3,20 +3,31 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>Drupal7 学习笔记之执行流程(二)——路由分发阶段 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
+    <meta name="description" content="上一节说到由menu_get_item()函数得到$router_item,这里是整个路由系统的核心，这个函数将用户请求的path分解并转化成对应的处理模块来进行处理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+<meta property="og:title" content="Drupal7 学习笔记之执行流程(二)——路由分发阶段">
+<meta property="og:url" content="https://fpg-alan.github.io/2014/10/25/drupal7-2/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="上一节说到由menu_get_item()函数得到$router_item,这里是整个路由系统的核心，这个函数将用户请求的path分解并转化成对应的处理模块来进行处理。">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/2763c5ae-7116-4e31-8f32-0ad5d05e4fdb">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/f9282559-e87d-48e0-9f45-188acc31390b">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/476924de-225f-4bb9-8f67-f95ddbf885f3">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/a2333b7d-9961-41d7-bb84-c53a1474a266">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/22cfa5e4-09ab-4cf2-846b-00543ddb10d5">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/6221bc6e-0661-4884-bdf8-6362e6073c0a">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/e5c70894-9604-4e24-99a4-cbd4593dbfb9">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/5d8f4f9f-6c4d-4956-8123-26766674fef2">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/8fa1d696-b475-4e02-b2c4-9bf79ec05755">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/dcd68ff9-d6c4-4e76-ac53-2ed9372fb49a">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/62a765b6-b857-4a4d-9163-b1db6a053e59">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/bf91bd7f-b2de-4fd4-979f-5e86854dc860">
+<meta property="og:updated_time" content="2017-07-09T06:11:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="Drupal7 学习笔记之执行流程(二)——路由分发阶段">
+<meta name="twitter:description" content="上一节说到由menu_get_item()函数得到$router_item,这里是整个路由系统的核心，这个函数将用户请求的path分解并转化成对应的处理模块来进行处理。">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s38/res/2763c5ae-7116-4e31-8f32-0ad5d05e4fdb">
     
 
     
@@ -183,7 +194,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-drupal7-2" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -191,7 +202,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+            Drupal7 学习笔记之执行流程(二)——路由分发阶段
         </h1>
     
 
@@ -200,8 +211,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2014/10/25/drupal7-2/">
+            <time datetime="2014-10-24T16:00:00.000Z" itemprop="datePublished">2014-10-25</time>
         </a>
     </div>
 
@@ -210,7 +221,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
     </div>
 
                     </div>
@@ -221,15 +232,25 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
+            <p>上一节说到由menu_get_item()函数得到$router_item,这里是整个路由系统的核心，这个函数将用户请求的path分解并转化成对应的处理模块来进行处理。<br><a id="more"></a><br>现在来看看这个函数的内容：<br><img src="https://app.yinxiang.com/shard/s38/res/2763c5ae-7116-4e31-8f32-0ad5d05e4fdb" alt=""></p>
+<p>448行，&amp;drupal_static()函数位于bootstrap.inc中，以函数名为key保存一些静态的变量，本例中即$router_items,&amp;drupal_static()函数对于drupal性能的优化起着重要的作用，在其他一些情境中，在一个页面多次用到一个数据库的请求的时候，即可使用这个函数，避免多次重复的数据库查询。<br>这里有个细节问题：这里的函数调用drupal_static()前面加了“&amp;”，作用是将drupal_static函数的返回值的引用传递给$router_items变量而非值，因此，在menu_get_item函数中对$router_items的改动直接影响存贮在静态数组$data中的对应值。</p>
+<p>$router_items保存当前的查询中的路由项，第一次获取该静态变量是在drupal启动第7步，也就是_drupal_bootstrap_full()函数中，该函数位于include/common/下，在5159行调用了menu.inc的menu_set_custom_theme()函数，这个函数的作用以后再说，其中的1766行第一次调用了menu_get_item()函数，此时获取的$router_items静态变量为NULL，因此在menu_get_item()函数的455行开始了对其的初始化过程，下面将会提到这一步。</p>
+<p>449行，判断当前请求路径是否为空，若为空，从PHP的全局数组$_GET中获取</p>
+<p>452行，判断是否已存在一个路由项，如果存在，设置$router_items数组中当前路径的值为此路由项</p>
+<p>455行，判断$router_items数组中是否存在当前路径的路由信息</p>
+<p>459行，menu_rebuild()函数，重建菜单，由variable_get()函数获得两个常量值，来判断是否需要重建菜单，variable_get()函数位于bootstrap.inc中，用于获取在$conf全局数组中保存的常量(在Drupal8中，使用config()函数取代variable_get()/variable_set()函数)。<br>至于何时需要重建菜单，这里就不深入研究了，以后再说</p>
+<p>461行，这里又用到一个位于bootstrap中的函数:arg()。这个函数简单来说，就是将请求的路径以”/“为边界分割成一个数组，例如”node/past/1”,转变为”[’node’,’past’,’1’]”。</p>
+<p>463行，截取上面得到路径数组，drupal对请求路径的元素个数有限制，默认上限是9个，一般是不会超过的。</p>
+<p>464行，对这个路径数组进行进一步解析，使用menu_get_ancestors()函数获得当前请求路径的ancestor数组，这里ancestor有“祖辈”的意思，可以理解为获得当前请求路径以通配符显示的路径层级数组，看个简单的例子就好理解了：<br>请求路径：node/12345/edit<br>ancestor数组：[<br>     node/12345/edit<br>     node/12345/%<br>     node/%/edit<br>     node/%/%<br>     node/12345<br>     node/%<br>     node<br>]</p>
+<p>465行，使用上面获得的路径数组查询数据库的menu_router表，得到对应的路由信息。</p>
+<p>472-485行，继续对router_item进行处理，这里会检查当前用户对此路由信息的访问权限等…[待补充]</p>
+<p>[2014.10.23目前执行流程分析已经进行到了页面渲染的最后一步，在前面还有些不甚清楚的地方影响下，推进的比较慢，所以回来对这部分进行补充。]</p>
+<p>472行，使用_menu_translate函数对路由信息进行处理，这个函数主要做三件事<br>1.如果路由信息包含一个load_functions则调用这个load_functions加载对应的对象<br>2.根据路由信息将使用通配符的路径转变成正常路径(如路由信息中的路径包含通配符，如’node/%’,则根据请求的路径在路由信息中添加新的字段’href’，包含一个准确的路径，如’node/1’)<br>3.判断用户对当前路由信息的访问权限。</p>
+<p>这里有个有意思的地方，先看代码：<br><img src="https://app.yinxiang.com/shard/s38/res/f9282559-e87d-48e0-9f45-188acc31390b" alt=""></p>
+<p>这里前面有提到，这里将请求路径以’/‘为分隔符分割成数组，这个数组将在后面被作为$map传入_menu_translate函数<br><img src="https://app.yinxiang.com/shard/s38/res/476924de-225f-4bb9-8f67-f95ddbf885f3" alt=""><br>并在767行将值赋给$path_map<br><img src="https://app.yinxiang.com/shard/s38/res/a2333b7d-9961-41d7-bb84-c53a1474a266" alt=""><br>779行，将路由信息中的’path’字段也以’/‘为分隔符分割成数组，注意，这里路由信息里的path可能是包含通配符<br><img src="https://app.yinxiang.com/shard/s38/res/22cfa5e4-09ab-4cf2-846b-00543ddb10d5" alt=""><br>最后如果路由信息 path字段分割数组中包含’%’通配符，从用户请求路径分割数组中找到实际的部分进行替换<br><img src="https://app.yinxiang.com/shard/s38/res/6221bc6e-0661-4884-bdf8-6362e6073c0a" alt=""><br>之所以说这里有趣，是因为他的替换机制，先来看看node模块中声明路由信息部分的两个细节<br><img src="https://app.yinxiang.com/shard/s38/res/e5c70894-9604-4e24-99a4-cbd4593dbfb9" alt=""><br><img src="https://app.yinxiang.com/shard/s38/res/5d8f4f9f-6c4d-4956-8123-26766674fef2" alt=""><br>这是两个不同的路由信息，可以看到他们使用通配符的位置和数量也不一样，那么在前面，又是如何在一个for循环里面替换所有的通配符的呢，再来看看上面for循环的条件，使用的是路由项信息中的number_parts字段，而在数据库中可以看到这两个路由项的这个字段:<br><img src="https://app.yinxiang.com/shard/s38/res/8fa1d696-b475-4e02-b2c4-9bf79ec05755" alt=""><br><img src="https://app.yinxiang.com/shard/s38/res/dcd68ff9-d6c4-4e76-ac53-2ed9372fb49a" alt=""><br>这样就明白了，路由项path的段数不同，number_parts也不同，只要使用这个参数进行循环，保证每一段都经过判断，就可以确保每段上若使用通配符都可以被替换。<br>不过在node.module声明路由信息部分，我没有找到定义number_parts字段的地方，通过  Drupal7 学习笔记之杂项  建立路由信息项 这篇后，我发现，这个字段是在建立路由项表menu_router的时候由Drupal7自行计算的<br>这段代码位于menu.inc/_menu_router_build():<br><img src="https://app.yinxiang.com/shard/s38/res/62a765b6-b857-4a4d-9163-b1db6a053e59" alt=""><br>再来看看_menu_translate函数的第一个功能:<br><img src="https://app.yinxiang.com/shard/s38/res/bf91bd7f-b2de-4fd4-979f-5e86854dc860" alt=""><br>在路由项中存在‘load_functions’字段时，使用_menu_load_objects函数载入对应对象<br>这里路由项中的‘load_functions’字段并不全是在各模块的路由项信息那里配置，而是在生成menu_router表的时候，由Drupal7执行正则匹配得到,这一块目前不需要太过深入。<br>如果请求的路径是’node/1’，则这个’load_functions’指向的函数是node.module下的node_load()函数，这个函数调用同文件下的node_load_multiple函数，最终调用位于common.inc下的entity_load()函数完成加载，entity_load函数用于从数据库中加载实体，在这里不再深入。<br>剩下的待补充…</p>
 <hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
+<p>从这个函数可以看出，路由存放在数据库的menu_router表中，menu.inc文件通过$_GET[‘q’]获得用户当前请求路径，通过一系列操作将其映射为数据库中保存的对应的路由信息，这一步也就是用户请求路径的分发</p>
+<p>那么问题来了，挖掘机技术，数据库中的路由信息是在什么时候写入的呢，此外，459行的路由重建又是在什么情况下执行，<br>（比如第一次访问网站，或者进行缓存清理的时候）<br>这些目前来说，对于执行流程分析不是必要知道的，所以目前来说，只需要明白，从一个路径信息如何转化到一个路由信息就可以了。</p>
 
         
         </div>
@@ -241,7 +262,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj4w9e5zq000l7xj7l3gesoq8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/25/drupal7-2/" data-id="cj4wbahm8000z7xj7xcxgb10a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,19 +337,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2014/10/26/drupal7-3/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    ES6里需要了解的新内容
+                    Drupal7 学习笔记之执行流程(四)——请求响应阶段
                 
             </div>
         </a>
     
     
-        <a href="/2014/11/08/drupal7-project/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2014/10/24/drupal7-1/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 项目经验 Ajax+pushData 无刷新加载</div>
+            <div class="article-nav-title">Drupal7 学习笔记之执行流程(一)——路由分发阶段</div>
         </a>
     
 </nav>

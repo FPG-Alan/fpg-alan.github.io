@@ -3,20 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>Drupal7 学习笔记之执行流程(零)——核心启动阶段 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
+    <meta name="description" content="Drupal7 请求过程 分步分析总览：1.核心启动阶段2.路由分发阶段3.请求响应阶段4.页面渲染阶段">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+<meta property="og:title" content="Drupal7 学习笔记之执行流程(零)——核心启动阶段">
+<meta property="og:url" content="https://fpg-alan.github.io/2014/10/23/drupal7-0/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="Drupal7 请求过程 分步分析总览：1.核心启动阶段2.路由分发阶段3.请求响应阶段4.页面渲染阶段">
+<meta property="og:updated_time" content="2017-07-09T06:11:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="Drupal7 学习笔记之执行流程(零)——核心启动阶段">
+<meta name="twitter:description" content="Drupal7 请求过程 分步分析总览：1.核心启动阶段2.路由分发阶段3.请求响应阶段4.页面渲染阶段">
     
 
     
@@ -183,7 +181,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-drupal7-0" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -191,7 +189,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+            Drupal7 学习笔记之执行流程(零)——核心启动阶段
         </h1>
     
 
@@ -200,8 +198,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2014/10/23/drupal7-0/">
+            <time datetime="2014-10-22T16:00:00.000Z" itemprop="datePublished">2014-10-23</time>
         </a>
     </div>
 
@@ -210,7 +208,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
     </div>
 
                     </div>
@@ -221,15 +219,21 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
+            <p>Drupal7 请求过程 分步分析总览：<br>1.核心启动阶段<br>2.路由分发阶段<br>3.请求响应阶段<br>4.页面渲染阶段</p>
+<a id="more"></a> 
+<p>核心启动阶段：</p>
+<p>1.加载第一阶段:建立脚本环境，并加载配置文件<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bootstrap.inc--&gt;_drupal_bootstrap_configuration()</div></pre></td></tr></table></figure></p>
+<p>设置自定义的错误处理函数<br>设置自定义的异常处理函数<br>设置PHP环境（设置$_SERVER以及PHP配置文件）–&gt;drupal_environment_initialize(),并在这里把请求的链接格式化<br>(www.example.com/?q=xxx/sss=======&gt;www.example.com/xxx/sss)<br>开始页面时间计时<br>根据配置文件，全局化系统需要的一些常量并赋值(如baseurl,database等)–&gt;drupal_settings_initialize()</p>
 <hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
+<p>2.加载第二阶段:尝试从缓存中提供一个页面<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bootstrap.inc--&gt;_drupal_bootstrap_page_cache()</div></pre></td></tr></table></figure><br>首先全局化一个用户变量，此时这个用户是空的<br>加载特定的缓存处理模块(如果有的话)<br>检查缓存模式，若page_cache_without_database，则不进行IP过滤<br>若page_cache_without_database为false，则执行加载第三阶段与加载第四阶段<br>过滤被阻止的IP，如被阻止，则显示一个Forbbiden页面，终止程序执行<br>若page_cache_without_database且用户尚未登录，则搜寻缓存，提供一个缓存的页面，终止程序执行<br>否则发送HTTP header(‘X-Drupal-Cache: MISS’)  缓存未命中。</p>
 <hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
+<p>3.加载第三阶段:加载数据库<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bootstrap.inc--&gt;_drupal_bootstrap_database()</div></pre></td></tr></table></figure><br>做三件事:<br>    1.检查是否尚未安装，如果还未安装，则引导用户来到安装界面<br>    2.检查是否在测试状态<br>    3.如不是上述两个状态，则加载数据库层核心文件并注册自动加载函数</p>
 <hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
+<p>4.加载第四阶段:从数据库中加载常量，并填充至$conf数组中<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bootstrap.inc--&gt;_drupal_bootstrap_variables()</div></pre></td></tr></table></figure><br>初始化锁定系统，该系统用于在Drupal执行某些长时间的操作，如重建系统菜单，解决相同操作重复请求或者具有潜在的竞争条件的请求产生的问题.<br>加载一些在启动阶段需要的模块</p>
+<hr>
+<p>5.加载第五阶段<br>6.加载第六阶段<br>7.加载第七阶段<br>8.加载第八阶段</p>
+<hr>
+<p>9.加载第九阶段:对请求地址进行路由<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">index.php--&gt;menu_execute_active_handler()</div></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -241,7 +245,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj4w9e5zq000l7xj7l3gesoq8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/23/drupal7-0/" data-id="cj4w9pzlp000u7xj71katrad8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,19 +320,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2014/10/24/drupal7-1/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    ES6里需要了解的新内容
+                    Drupal7 学习笔记之执行流程(一)——路由分发阶段
                 
             </div>
         </a>
     
     
-        <a href="/2014/11/08/drupal7-project/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2014/10/20/drupal7-hook/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 项目经验 Ajax+pushData 无刷新加载</div>
+            <div class="article-nav-title">Drupal7 Hook</div>
         </a>
     
 </nav>

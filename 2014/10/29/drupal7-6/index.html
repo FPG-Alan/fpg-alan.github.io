@@ -3,20 +3,30 @@
 <head>
     <meta charset="utf-8">
     
-    <title>nodejs 版本管理 | Unspecified</title>
+    <title>Drupal7 学习笔记之执行流程(七)——页面渲染阶段 | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
+    <meta name="description" content="所有的页面内容数组都已经准备完毕，此时，调用drupal_render函数，对页面进行渲染:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs 版本管理">
-<meta property="og:url" content="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/index.html">
+<meta property="og:title" content="Drupal7 学习笔记之执行流程(七)——页面渲染阶段">
+<meta property="og:url" content="https://fpg-alan.github.io/2014/10/29/drupal7-6/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta property="og:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
-<meta property="og:updated_time" content="2017-03-29T08:04:27.000Z">
+<meta property="og:description" content="所有的页面内容数组都已经准备完毕，此时，调用drupal_render函数，对页面进行渲染:">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/c7249599-3e68-425c-b94a-2795dff3b0dd">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/c55c24d5-28cf-466c-969c-f6e1d7a5d92e">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/0c3eba62-dd55-4264-a618-d19b59d8b91f">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/cca1a7cc-1d42-4bb6-97d4-d80a4cf10cb0">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/f7933180-15fe-46fb-ab36-fbef980d39df">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/324fdf2e-6e61-4ecc-8843-d5447b862969">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/773e7e39-42d5-416c-8304-6ea73a5e229d">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/497b71bf-d12d-4be1-8aba-26e42791f892">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/6c2f7ade-4c91-4f7b-a6e6-a4cff000490e">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/35d37f29-2e04-4c5d-a3dd-eb75bc80adaf">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/373c3622-962d-45e7-83b7-0d5bfcee7786">
+<meta property="og:updated_time" content="2017-07-09T06:30:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs 版本管理">
-<meta name="twitter:description" content="使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。">
-<meta name="twitter:image" content="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&v=01d689df">
+<meta name="twitter:title" content="Drupal7 学习笔记之执行流程(七)——页面渲染阶段">
+<meta name="twitter:description" content="所有的页面内容数组都已经准备完毕，此时，调用drupal_render函数，对页面进行渲染:">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s38/res/c7249599-3e68-425c-b94a-2795dff3b0dd">
     
 
     
@@ -183,7 +193,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-nodejs-version-controll" class="article article-post article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-drupal7-6" class="article article-post article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -191,7 +201,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            nodejs 版本管理
+            Drupal7 学习笔记之执行流程(七)——页面渲染阶段
         </h1>
     
 
@@ -200,8 +210,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/nodejs-version-controll/">
-            <time datetime="2017-02-28T07:00:50.000Z" itemprop="datePublished">2017-02-28</time>
+        <a href="/2014/10/29/drupal7-6/">
+            <time datetime="2014-10-28T16:00:00.000Z" itemprop="datePublished">2014-10-29</time>
         </a>
     </div>
 
@@ -210,7 +220,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/javascript-nodejs/">javascript nodejs</a>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
     </div>
 
                     </div>
@@ -221,15 +231,23 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>使用 Node 的过程中会经常遇到需要特定的 Node 版本的情况,一个 Node 版本管理工具是必备的。<br>目前比较流行的版本管理有两个,分别是 nvm 和 n ,这两个版本管理我都有用过。<br><a id="more"></a> </p>
+            <p>所有的页面内容数组都已经准备完毕，此时，调用drupal_render函数，对页面进行渲染:<br><a id="more"></a><br><img src="https://app.yinxiang.com/shard/s38/res/c7249599-3e68-425c-b94a-2795dff3b0dd" alt=""><br>前面有很长一段，依然是在做预处理，比如判断当前用户访问权限，是否重复渲染，是否存在这个页面的缓存，检查页面元素的markup，检查页面元素类型信息，检查元素有无渲染前最终处理函数，并在执行可能存在的最终处理函数后再次检查是否重复渲染……<br>好了，等这些都检查完了，下面开始终于是正式渲染进程了:<br><img src="https://app.yinxiang.com/shard/s38/res/c55c24d5-28cf-466c-969c-f6e1d7a5d92e" alt=""><br>首先是获得所有子元素的键值数组，这里子元素在$elements数组中key的值不以“#”开头的键值对，并按照权重排序。<br><img src="https://app.yinxiang.com/shard/s38/res/0c3eba62-dd55-4264-a618-d19b59d8b91f" alt=""><br>初始化页面元素的”children”属性<br><img src="https://app.yinxiang.com/shard/s38/res/cca1a7cc-1d42-4bb6-97d4-d80a4cf10cb0" alt=""><br>如果页面元素存在”theme”属性,调用theme函数设置元素的”children”属性<br>theme函数位于theme.inc文件,又是一个重量级函数，不推荐直接调用这个函数，而是通过调用drupal_render函数来访问它:<br>首先是第一部分，这部分主要是准备阶段，检测是否存在一些问题:<br><img src="https://app.yinxiang.com/shard/s38/res/f7933180-15fe-46fb-ab36-fbef980d39df" alt=""><br>1020行，得到注册的所有主题函数，保存在$hooks中</p>
+<p>1024-1032行，判断传递过来的主题钩子名是不是数组，如果是，第一个有效</p>
+<p>1036-1053行，若所有的主题钩子实现当中没有匹配传递过来的，进一步检查更通用的回调钩子，如果还是没有匹配的，则记录一个错误并且返回空字符串</p>
+<p>接下来是第二部分，这个部分主要是根据传过来的内容数组进行重新创建:<br><img src="https://app.yinxiang.com/shard/s38/res/324fdf2e-6e61-4ecc-8843-d5447b862969" alt=""><br>1059-1061行，声明接下来要用到的变量，获取匹配的主题信息，全局化主题路径变量</p>
+<p>1064行，得到主题信息中的路径信息</p>
+<p>1068-1072行，若此匹配的主题需要加载外部文件，加载</p>
+<p>1076-1090行，重建variables数组</p>
+<p>1094-1099行，进一步更改variables数组</p>
+<p>然后是第三部分:<br><img src="https://app.yinxiang.com/shard/s38/res/773e7e39-42d5-416c-8304-6ea73a5e229d" alt=""><br><img src="https://app.yinxiang.com/shard/s38/res/497b71bf-d12d-4be1-8aba-26e42791f892" alt=""><br>这部分开始执行匹配主题中的预处理跟处理函数<br>首先检查是否存在base_hook，如果存在，意味着这是个继承自一个主题的主题，则需要执行父级主题的预处理跟处理函数<br>然后开始执行自身的预处理跟处理函数，这些函数</p>
+<p>最后检查是否有theme_hook_suggestions，这个目前不明白</p>
+<p>第四部分:<br><img src="https://app.yinxiang.com/shard/s38/res/6c2f7ade-4c91-4f7b-a6e6-a4cff000490e" alt=""><br><img src="https://app.yinxiang.com/shard/s38/res/35d37f29-2e04-4c5d-a3dd-eb75bc80adaf" alt=""><br>这一部分正式开始建立输出，找到模板文件的路径和渲染函数，进入渲染函数进行渲染！<br>一般情况下，渲染函数为theme_render_template，看看这个函数的内容<br><img src="https://app.yinxiang.com/shard/s38/res/373c3622-962d-45e7-83b7-0d5bfcee7786" alt=""><br>两个参数，一个是上面得到的模板文件路径，一个是页面内容数组<br>1527行，解开页面内容数组的所有变量到本地命名空间，这样下面include进来的模板文件就可以直接调用了</p>
+<p>1530行，打开输出缓存</p>
+<p>1533行，引入模板文件</p>
+<p>1536行，输出！</p>
 <hr>
-<p>一开始是用 nvm,这个东西独立于 Node,是一个独立的安装包, 在安装的时候, nvm 将不同的 Node 版本存储到 <code>~/.nvm/&lt;version&gt;/</code> 下，然后修改 $PATH，将指定版本的 Node 路径加入,这样我们调用的 Node 命令即是使用指定版本的 Node。</p>
-<p>n则更为简单一些,它依赖 Node, 使用 npm 安装, n 会将指定版本的 Node 保存下来, 然后在我们切换版本的时候,将对应版本的 Node 文件复制到 usr/local/bin 目录下从而切换 Node 版本。</p>
-<hr>
-<p>两者的原理弄清楚了也就好比较两者的区别:<br>n 是个比较简单易用的工具, 但安装 n 之前你需要先安装 Node 环境, 并且 n 这种简单复制的做法无法处理全局安装的 Node 模块, 一旦切换了版本, 全局包就有可能执行出错。<br>nvm 则不存在全局包的问题, 在 nvm 下全局安装的包也会被安装到 <code>~/.nvm/&lt;version&gt;/</code> 下, 切换版本之后就需要重新安装全局包。 但是因为 nvm 会改写 $PATH, 所以有些IDE或者其他程序(比如 lessc )可能会需要给定一个完整的 Node 路径。</p>
-<p><img src="https://d3dr1ze7164817.cloudfront.net/items/0E2e3W0l2E2X1Y250m2f/fc2eb681e0425772def5aa24a1f71e6a0567b808.png?X-CloudApp-Visitor-Id=2717012&amp;v=01d689df" alt="Webstorm 需要被设置完整的Node路径"></p>
-<hr>
-<p>目前我使用的是 n ,因为我的工作中较少出现需要频繁切换 Node 环境的场景, 使用版本管理更多的是便于更新到最新的 Node 环境, 如果有需要在不同 Node 环境之间来回切换, 还是倾向于选择 nvm。</p>
+<p>模板文件就不看了，到这为止，Drupal7的执行流程分析马马虎虎算是走完了，这个过程中还是有很多不清不楚的地方，但是为了走完这个流程我就暂且忽略了，后面还有篇总结，打算再从头简单走一遍流程，加深理解，早上写了点，不过现在有点晚了，思维不太清楚，等周末再完善吧。</p>
+<p>接下来准备用个项目练手，试试这3天的收获~</p>
 
         
         </div>
@@ -241,7 +259,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/02/28/nodejs-version-controll/" data-id="cj4w9e5zq000l7xj7l3gesoq8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/29/drupal7-6/" data-id="cj4wc4ttu00177xj7swnahvgi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,19 +334,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/03/02/need-to-know-in-ES6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2014/11/03/drupal7-other/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    ES6里需要了解的新内容
+                    Drupal7 学习笔记杂项
                 
             </div>
         </a>
     
     
-        <a href="/2014/11/08/drupal7-project/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2014/10/28/drupal7-5/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 项目经验 Ajax+pushData 无刷新加载</div>
+            <div class="article-nav-title">Drupal7 学习笔记之执行流程(六)——页面渲染阶段</div>
         </a>
     
 </nav>
