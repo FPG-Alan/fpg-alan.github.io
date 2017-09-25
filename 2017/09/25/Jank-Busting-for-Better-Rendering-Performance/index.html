@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Jank-Busting-for-Better-Rendering-Performance | Unspecified</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jank-Busting-for-Better-Rendering-Performance">
+<meta property="og:url" content="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/index.html">
+<meta property="og:site_name" content="Unspecified">
+<meta property="og:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
+<meta property="og:updated_time" content="2017-09-25T09:07:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jank-Busting-for-Better-Rendering-Performance">
+<meta name="twitter:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Unspecified</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">存档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.jpg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">存档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.jpg" />
+            <h2 id="name">Alan Yang</h2>
+            <h3 id="title">Living is do or die</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Nanjing, China</span>
+            <a id="follow" target="_blank" href="https://github.com/FPG-Alan">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                17
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://codepen.io/theYY/" target="_blank" title="codepen" class=tooltip>
+                            <i class="fa fa-codepen"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Jank-Busting-for-Better-Rendering-Performance" class="article article-post article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Jank-Busting-for-Better-Rendering-Performance
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/">
+            <time datetime="2017-09-25T07:26:05.000Z" itemprop="datePublished">2017-09-25</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Performance/">Performance</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>You want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between a “native” feel or a clunky, unpolished one.</p>
+<p>This is the first in a series of articles covering rendering performance optimization in the browser. To kick things off, we’ll cover why smooth animation is difficult and what needs to happen to achieve it, as well as a few easy best practices. Many of these ideas were originally presented in “Jank Busters,” a talk Nat Duca and I gave at Google I/O talk (video, slides) this year.</p>
+<p>我们总是希望web app的动画,效果可以灵敏而顺滑, 是否是”Jank-free”的就是其中的关键.</p>
+<p>这是系列文章中的第一篇, 这一系列涉及到浏览器中的渲染性能优化.<br>在一开始,我们将会阐述顺滑动画的难点以及我们需要做什么来达到顺滑, 也包括一些简单的最佳实践. 其中大部分想法是从”Jank Busters”中来的, 这是我和Nat Duca 在今年的Google I/O talk 中做的演讲.</p>
+<h2 id="Introducing-V-sync"><a href="#Introducing-V-sync" class="headerlink" title="Introducing V-sync"></a>Introducing V-sync</h2><p>PC gamers might be familiar with this term, but it’s uncommon on the web: what is v-sync?</p>
+<p>Consider your phone’s display: it refreshes on a regular interval, usually (but not always!) about 60 times a second. V-sync (or vertical synchronization) refers to the practice of generating new frames only between screen refreshes. You might think of this like a race condition between the process that writes data into the screen buffer and the operating system reading that data to put it on the display. We want the buffered frame contents to change in between these refreshes, not during them; otherwise the monitor will display half of one frame and half of another, leading to “tearing”.</p>
+<p>To get a smooth animation you need a new frame to be ready every time a screen refresh happens. This has two big implications: frame timing (that is, when the frame needs to be ready by) and frame budget (that is, how long the browser has to produce a frame). You only have the time between screen refreshes to complete a frame (~16ms on a 60Hz screen), and you want to start producing the next frame as soon as the last one was put up on the screen.</p>
+<p>PC游戏玩家可能会对这个术语很熟悉, 但在web领域它是不同的, 什么是v-sync?  </p>
+<p>想象你的手机, 它每一固定时间刷新一次, 一般是60次/秒, V-sync是指一种只在屏幕刷新之间创建新帧的做法. 你可以把这当做一种在写入数据到显示数据Buffer内和系统读取这些数据来显示之间的条件竞争, 我们希望缓存的帧内容的变化发生在屏幕刷新之间, 而不是在同时发生, 否则显示器就会发生画面撕裂的现象(显示某帧的一半, 其他帧的另一半).</p>
+<p>要得到一个顺滑的动画, 你需要保证每次频幕刷新时都有一些帧准备好. 这有两个含义:  </p>
+<ol>
+<li>帧时间 (也就是, 帧在什么时间需要准备好)</li>
+<li>帧预算 (也就是, 浏览器有多久时间来产生一帧)</li>
+</ol>
+<p>你只有频幕两次刷新之间的时间来完成一帧(在刷新频率60HZ的显示器上, 约16ms), 并且在当前帧被渲染出来时, 你需要尽快开始产生下一帧.</p>
+<h2 id="Timing-is-Everything-requestAnimationFrame"><a href="#Timing-is-Everything-requestAnimationFrame" class="headerlink" title="Timing is Everything: requestAnimationFrame"></a>Timing is Everything: requestAnimationFrame</h2><p>Many web developers use setInterval or setTimeout every 16 milliseconds to create animations. This is a problem for a variety of reasons (and we’ll discuss more in a minute), but of particular concern are:</p>
+<ul>
+<li>Timer resolution from JavaScript is only on the order of several milliseconds</li>
+<li>Different devices have different refresh rates</li>
+</ul>
+<p>Recall the frame timing problem mentioned above: you need a completed animation frame, finished with any JavaScript, DOM manipulation, layout, painting, etc, to be ready before the next screen refresh occurs. Low timer resolution can make it difficult to get animation frames completed before the next screen refresh, but variation in screen refresh rates makes it impossible with a fixed timer. No matter what the timer interval is you’ll slowly drift out of the timing window for a frame and end up dropping one. This would happen even if the timer fired with millisecond accuracy, which it won’t (as developers have discovered) – timer resolution varies depending on whether the machine is on battery vs. plugged in, can be affected by background tabs hogging resources, etc. Even if this is rare (say, every 16 frames because you were off by a millisecond) you’ll notice: you’ll be dropping several frames a second. You’ll also be doing the work to generate frames that never get displayed, which wastes power and CPU time you could be spending doing other things in your application.</p>
+<p>很多web开发者使用setInterval或者setTimeout来做动画, 这主要有两个问题: </p>
+<ul>
+<li>JS的定时器的粒度一般在数个毫秒的数量级.</li>
+<li>不同设备有不同的刷新频率</li>
+</ul>
+<p>回到上面提到的帧时间问题: 你需要一个完整的动画帧, 包含一些JS, DOM操作, 布局, 绘制等等, 在下一次刷新之前准备完成, 低粒度的定时器会让动画帧很难确保在下一次屏幕刷新前完成, 并且不同设备拥有不同的刷新率, 使用这类定时器指定一个固定的时间就更加无法确保帧生成完毕时间. </p>
+<p>无论设置什么样的时间间隔, 你都会慢慢的错过一帧的时间窗口, 最终丢弃某一帧, 哪怕把定时器设置为1ms也会发生这个情况, 因为这个时间粒度还和设备是否外接电源, 或者没有激活的选项卡的资源占用等等其他情况有关.</p>
+<p>虽然这个情况发生的频率不高(比如, 每16帧, 因为你错过了1ms), 需要注意, 你每秒都会丢弃一些已经生成好的帧, 这浪费了CPU资源和电量, 而这些资源本可以用来做其他事情.</p>
+<p>Different displays have different refresh rates: 60Hz is common, but some phones are 59Hz, some laptops drop to 50Hz in low-power mode, some desktop monitors are 70Hz.</p>
+<p>We tend to focus on frames per second (FPS) when discussing rendering performance, but variance can be an even bigger problem. Our eyes notice the tiny, irregular hitches in animation that a poorly timed animation can produce.</p>
+<p>The way to get correctly timed animation frames is with requestAnimationFrame. When you use this API, you’re asking the browser for an animation frame. Your callback gets called when the browser is soon going to produce a new frame. This happens no matter what the refresh rate is.</p>
+<p>requestAnimationFrame has other nice properties too:</p>
+<ul>
+<li>Animations in background tabs get paused, conserving system resources and battery life.</li>
+<li>If the system can’t handle rendering at the screen’s refresh rate, it can throttle animations and produce the callback less frequently (say, 30 times a second on a 60Hz screen). While this drops framerate in half, it keeps the animation consistent – and as stated above, our eyes are much more attuned to variance than framerate. A steady 30Hz looks better than 60Hz that misses a few frames a second.</li>
+</ul>
+<p>requestAnimationFrame has been discussed all over the place already, so refer to articles like this one from creative JS for more info on it, but it’s an important first step to smooth animation.</p>
+<p>不同的显示设备拥有不同的刷新频率, 一般是60HZ, 但有些手机是59HZ, 有些笔记本会在低电量时下降到50HZ, 有些桌面显示器是70HZ.</p>
+<p>我们趋向在讨论渲染性能的时候关注FPS, 但这种变化会造成比想的更严重的问题, 如果动画时间不对, 我们的眼睛就会注意到动画过程中的一些很小的, 不规律的暂停.</p>
+<p>那么获得正确的动画帧时间的方法就是 requestAnimationFrame , 使用这个API就是向浏览器申请一个动画帧, 回调函数会在浏览器将要产生一个新的帧的时候被调用, 这个调用和刷新率无关.</p>
+<p>使用requestAnimationFrame还有其他一些好处:</p>
+<ul>
+<li>未激活的Tab内的动画会被停止以节约系统资源和电量.</li>
+<li>如果系统无法以屏幕的刷新率来处理渲染任务, 它会相应降低动画频率(降低回调频率, 比如在刷新率60HZ的频幕上, 每秒调用30次回调), 以此来保证动画的连贯, 而比起帧频,我们的眼睛对卡顿会更加敏感, 一个稳定的30HZ动画会比卡顿的60HZ动画看起来更好.</li>
+</ul>
+<h2 id="Frame-Budget"><a href="#Frame-Budget" class="headerlink" title="Frame Budget"></a>Frame Budget</h2><p>Since we want a new frame ready on every screen refresh, there’s only the time in between refreshes to do all the work to create a new frame. On a 60Hz display, that means we’ve got about 16ms to run all JavaScript, perform layout, paint, and whatever else the browser has to do to get the frame out. This means if the JavaScript inside your requestAnimationFrame callback takes longer than 16ms to run, you don’t have any hope of producing a frame in time for v-sync!</p>
+<p>16ms isn’t a lot of time. Luckily Chrome’s Developer Tools can help you track down if you’re blowing your frame budget during the requestAnimationFrame callback.</p>
+<p>既然我们想要在每次频幕刷新时都有一些帧准备就绪, 能做这个工作的也就只有每次刷新之间的时间, 在一个帧频60HZ的显示器上, 这个时间大概是 16ms , 也就是说我们需要在16ms内运行完所有Javascript, 重排, 重绘和其他不管什么东西来产生一帧, 这就意味着 requestAnimationFrame 的回调函数如果需要多与16ms的时间, 你就别期望着准时产生一帧了.</p>
+<p>16ms不长. 幸运的是Chrome的开发者工具可以帮助你追踪是否在  requestAnimationFrame 回调中超出了这个时间.</p>
+<h2 id="Other-Source-of-Jank"><a href="#Other-Source-of-Jank" class="headerlink" title="Other Source of Jank"></a>Other Source of Jank</h2><p>The biggest cause of trouble when trying to run JavaScript-powered animations is that other stuff can get in the way of your rAF callback, and even prevent it from running at all. Even if your rAF callback is lean and runs in just a few milliseconds, other activities (like processing an XHR that just came in, running input event handlers, or running scheduled updates on a timer) can suddenly come in and run for any period of time without yielding. On mobile devices sometimes processing these events can take hundreds of milliseconds, during which time your animation will be completely stalled. We call those animation hitches jank.</p>
+<p>There’s no magic bullet to avoid these situations, but there are a few architectural best practices to set yourself up for success:</p>
+<ul>
+<li>Don’t do a lot of processing in input handlers! Doing a lot of JS or trying to rearrange the whole page during e.g. an onscroll handler is a very common cause of terrible jankiness.</li>
+<li>Push as much processing (read: anything that’ll take a long time to run) into your rAF callback or Web Workers as possible.</li>
+<li>If you push work into the rAF callback, try to chunk it up so you’re only processing a little bit each frame or delay it until after an important animation is over – this way you can continue to run short rAF callbacks and animate smoothly.</li>
+</ul>
+<p>For a great tutorial covering how to push processing into requestAnimationFrame callbacks rather than input handlers, see Paul Lewis’s article Leaner, Meaner, Faster Animations with requestAnimationFrame.</p>
+<p>js动画最大的问题在于, 其他的事务可能会在你rAF回调时发生, 甚至直接阻断rAF回调. 即使你的rAF回调很小, 可以在几个毫秒内运行, 其他的活动(比如突然发起的XHR请求, 运行中的input时间处理, 或者一个时钟的更新)都会突然进入运行一段时间, 并且不会让路. 在移动设备上, 这些事件有时可能需要上百毫秒来处理, 这段时间里你的动画将会完全停止, 这种情况称为 hitches jank.</p>
+<p>没有什么魔法来避免这种情况, 但这里有一些结构上的最佳实践:</p>
+<ul>
+<li>不要在input处理函数内做很多事, 在一个类似 onscroll 事件处理函数内做太多的js运算或者视图重排整个页面是一个很常见的造成严重卡顿的原因.</li>
+<li>尽可能的把需要长时间处理的操作放在rAF回调或者Web Workers内.</li>
+<li>如果你把工作放在rAF回调中, 尝试把这些工作分成块, 每次只做一部分, 或者延迟到某个重要动画完成后再执行, 这样你可以继续运行小的rAF回调并且使动画更加顺滑.</li>
+</ul>
+<p>关于把工作放入rAF回调而不是输入回调, 参看Paul Lewis的文章: Leaner, Meaner, Faster Animations with requestAnimationFrame.</p>
+<h2 id="CSS-Animation"><a href="#CSS-Animation" class="headerlink" title="CSS Animation"></a>CSS Animation</h2><p>What’s better than lightweight JS in your event and rAF callbacks? No JS.</p>
+<p>Earlier we said there’s no silver bullet for avoiding interrupting your rAF callbacks, but you can use CSS animation to avoid the need for them entirely. On Chrome for Android in particular (and other browsers are working on similar features), CSS animations have the very desirable property that the browser can often run them even if JavaScript is running.</p>
+<p>There’s an implicit statement in the above section on jank: browsers can only do one thing at a time. This isn’t strictly true, but it’s a good working assumption to have: at any given time the browser can be running JS, performing layout, or painting, but only one at a time. This can be verified in the Timeline view of Dev Tools. One of the exceptions to this rule is CSS animations on Chrome for Android (and soon desktop Chrome, though not yet).</p>
+<p>When possible, using a CSS animation both simplifies your application and lets animations run smoothly, even while JavaScript runs.</p>
+<p>有什么比起把轻量级的JS放入rAF回调执行的方式更好呢? 不用JS.</p>
+<p>刚才我们说, 没有银子弹可以避免rAF回调被打断, 但你可以用css动画来从根源上解决这个问题. 在安卓上的chrome浏览器内(其他浏览器也差不多), css动画拥有非常值得拥有的特性: 浏览器可以在JS运行的同时运行css动画.</p>
+<p>在卡顿问题上, 上面的章节中有个隐含的状态: 浏览器同时只能做一件事. 严格意义上这不正确, 但在开发时还是应该把这当做一个前提: 在任何时间段, 浏览器可以执行JS运算, 排版, 或者绘制, 但一次只能做其中一件事, 这可以通过Chrome的开发者工具验证. 其中一个例外是安卓上的Chrome的css动画(目前桌面版的Chrome还不是这样, 不过很快也会实施.)</p>
+<p>如果可能, 使用CSS动画既可以简化你的程序, 也可以使动画更加顺滑, 即使同时有JS在运行.</p>
+<p>For instance, consider this example of a rotating Chrome logo driven by rAF:</p>
+<p>下面的例子, 是一个使用rAF实现的logo旋转动画.</p>
+<pre><code>// see http://paulirish.com/2011/requestanimationframe-for-smart-animating/ for info on rAF polyfills
+rAF = window.requestAnimationFrame;
+
+var degrees = 0;
+function update(timestamp) {
+    document.querySelector(&apos;#foo&apos;).style.webkitTransform = &quot;rotate(&quot; + degrees + &quot;deg)&quot;;
+    console.log(&apos;updated to degrees &apos; + degrees);
+    degrees = degrees + 1;
+    rAF(update);
+}
+rAF(update);
+</code></pre><p>If you click the button JavaScript runs for 180ms, causing jank. But if instead we drive that animation with CSS animations the jank no longer occurs.</p>
+<p>如果你点击按钮, JS将会运行180ms, 造成一个卡顿, 但是如果我们使用css来做这个动画, 卡顿将不会发生:</p>
+<p>(写这篇文章的时候, css动画仅仅在安卓的Chrome上实现了jank-free)</p>
+<p>(Remember at the time of this writing, CSS animation is only jank-free on Chrome for Android, not desktop Chrome.)</p>
+<pre><code>/* tools like Modernizr (http://modernizr.com/) can help with CSS polyfills */
+#foo {
+    +animation-duration: 3s;
+    +animation-timing-function: linear;
+    +animation-animation-iteration-count: infinite;
+    +animation-animation-name: rotate;
+}
+
+@+keyframes: rotate; {
+    from {
+    +transform: rotate(0deg);
+    }
+    to {
+    +transform: rotate(360deg);
+    }
+}
+</code></pre><h2 id="Wrapup"><a href="#Wrapup" class="headerlink" title="Wrapup"></a>Wrapup</h2><p>The short of it is:</p>
+<ol>
+<li>When animating, producing frames for every screen refresh matters. Vsync’d animation makes a huge positive impact on the way an app feels.</li>
+<li>The best way to get vsync’d animation in Chrome and other modern browsers is to use CSS animation. When you need more flexibility than CSS animation provides, the best technique is requestAnimationFrame-based animation.</li>
+<li>To keep rAF animations healthy and happy, make sure other event handlers aren’t getting in the way of your rAF callback running, and keep rAF callbacks short (&lt;15ms).</li>
+</ol>
+<p>Lastly, vsync’d animation doesn’t only apply to simple UI animations – it applies to Canvas2D animation, WebGL animation, and even scrolling on static pages. In the next article in this series we’ll dig into scrolling performance with these concepts in mind.</p>
+<p>For more on hunting down jank on the web, see jankfree.com.</p>
+<p>Happy animating!</p>
+<p>总结:</p>
+<ol>
+<li>做动画时, 为每次屏幕刷新生成帧很重要, Vsync的动画对程序体验有了巨大的积极影响.</li>
+<li>在Chrome和其他现代浏览器中实现vsync动画的最好方式是CSS动画, 当你需要一些更加复杂的动画时, 最好的技术是基于 requestAnimationFrame 的动画.</li>
+<li>确保其他事件处理函数不会打断rAF回调, 保持rAF回调尽可能短(小于15ms)</li>
+</ol>
+<p>最后, vsync动画不仅仅应用于简单的UI动画, 也应用于canvas2d动画, webGL动画, 甚至是静态页面的滚动. 下一篇文章中我们会深入滚动性能.</p>
+
+        
+        </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" data-id="cj7zy94no00033aj7dwh18xx4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/05/01/nerual-network/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">神经网络学习总结</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+
+
+    
+   
+    
+   
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" class="title">Jank-Busting-for-Better-Rendering-Performance</a></p>
+                            <p class="item-date"><time datetime="2017-09-25T07:26:05.000Z" itemprop="datePublished">2017-09-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/05/01/nerual-network/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/05/01/nerual-network/" class="title">神经网络学习总结</a></p>
+                            <p class="item-date"><time datetime="2017-05-01T02:35:54.000Z" itemprop="datePublished">2017-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/23/basic-http/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/23/basic-http/" class="title">从输入地址到获取页面详细过程</a></p>
+                            <p class="item-date"><time datetime="2017-03-23T08:29:59.000Z" itemprop="datePublished">2017-03-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/03/from-global-to-cmd-amd-to-ES6-module/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/03/from-global-to-cmd-amd-to-ES6-module/" class="title">global, cmd/amd, ES6 Module Js的模块化进程</a></p>
+                            <p class="item-date"><time datetime="2017-03-03T05:52:33.000Z" itemprop="datePublished">2017-03-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/02/bitwise-operators/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/02/bitwise-operators/" class="title">Javascript按位操作符</a></p>
+                            <p class="item-date"><time datetime="2017-03-02T03:45:47.000Z" itemprop="datePublished">2017-03-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance/">Performance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/Performance/" style="font-size: 10px;">Performance</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 AlanYang<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        <!-- 
+ -->
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

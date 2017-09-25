@@ -152,11 +152,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                16
+                17
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                5
+                6
                 <span>标签</span>
             </div>
         </div>
@@ -181,6 +181,135 @@
 
             
             <section id="main">
+    <article id="post-drupal7-5" class="article article-index article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2014/10/28/drupal7-5/">Drupal7 学习笔记之执行流程(六)——页面渲染阶段</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/10/28/drupal7-5/">
+            <time datetime="2014-10-27T16:00:00.000Z" itemprop="datePublished">2014-10-28</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>进入渲染阶段，执行位于common.inc文件下的drupal_render_page函数。<br>这个函数实际上就是构建一个可用的页面数组，这个数组包含使用drupal_rander函数进行页面渲染时所有数据。<br></p>
+            <p class="article-more-link">
+                <a href="/2014/10/28/drupal7-5/#more">查看更多</a>
+            </p>
+        
+        </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://fpg-alan.github.io/2014/10/28/drupal7-5/" data-id="cj7zy94o2000d3aj7gnummk1g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
+
     <article id="post-drupal7-4" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -232,7 +361,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/27/drupal7-4/" data-id="cj4wbre8d00137xj7emayd0lk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/27/drupal7-4/" data-id="cj7zy94o0000b3aj7qhvtmwo1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -361,7 +490,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/26/drupal7-3/" data-id="cj4wbn7g800117xj7j2jm35hk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/26/drupal7-3/" data-id="cj7zy94nz00093aj76bwwajll" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -490,7 +619,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/25/drupal7-2/" data-id="cj4wbahm8000z7xj7xcxgb10a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/25/drupal7-2/" data-id="cj7zy94ny00083aj7dog8huwi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -619,7 +748,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/24/drupal7-1/" data-id="cj4wa14j0000x7xj78c0ngiwy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/24/drupal7-1/" data-id="cj7zy94ns00043aj7y3rbwluc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -748,7 +877,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/23/drupal7-0/" data-id="cj4w9pzlp000u7xj71katrad8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/23/drupal7-0/" data-id="cj7zy94nw00053aj7ivvoizeh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -877,7 +1006,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/20/drupal7-hook/" data-id="cj4wcn0m7001b7xj7oeej8pha" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/20/drupal7-hook/" data-id="cj7zy94o4000g3aj7rnejione" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -971,6 +1100,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" class="title">Jank-Busting-for-Better-Rendering-Performance</a></p>
+                            <p class="item-date"><time datetime="2017-09-25T07:26:05.000Z" itemprop="datePublished">2017-09-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/05/01/nerual-network/" class="thumbnail">
     
     
@@ -1044,25 +1192,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/02/need-to-know-in-ES6/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/03/02/need-to-know-in-ES6/" class="title">ES6里需要了解的新内容</a></p>
-                            <p class="item-date"><time datetime="2017-03-02T03:06:37.000Z" itemprop="datePublished">2017-03-02</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1074,7 +1203,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -1083,7 +1212,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance/">Performance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1092,7 +1221,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
+            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/Performance/" style="font-size: 10px;">Performance</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
         </div>
     </div>
 

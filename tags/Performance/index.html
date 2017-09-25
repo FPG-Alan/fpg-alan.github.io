@@ -3,24 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Drupal7 学习笔记之执行流程(五)——请求响应阶段 | Unspecified</title>
+    <title>标签: Performance | Unspecified</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Drupal7 学习笔记之执行流程(五)——请求响应阶段">
-<meta property="og:url" content="https://fpg-alan.github.io/2014/10/27/drupal7-4/index.html">
+    <meta name="description" content="Personal Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unspecified">
+<meta property="og:url" content="https://fpg-alan.github.io/tags/Performance/index.html">
 <meta property="og:site_name" content="Unspecified">
-<meta property="og:description" content="前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/bfa3272c-3766-4ca1-8c10-b42a0ac01da2">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/69f90900-6a24-4fee-bad2-a41e69998a67">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/9141c1a0-8658-47bd-bed7-f8f52c0583fb">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/83b830e1-3444-4f67-9a2c-24bd0d97576e">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s38/res/5d96c65a-3a6c-44f1-a8a4-0900b5e82244">
-<meta property="og:updated_time" content="2017-07-09T06:18:37.000Z">
+<meta property="og:description" content="Personal Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Drupal7 学习笔记之执行流程(五)——请求响应阶段">
-<meta name="twitter:description" content="前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：">
-<meta name="twitter:image" content="https://app.yinxiang.com/shard/s38/res/bfa3272c-3766-4ca1-8c10-b42a0ac01da2">
+<meta name="twitter:title" content="Unspecified">
+<meta name="twitter:description" content="Personal Blog">
     
 
     
@@ -187,168 +180,45 @@
 </aside>
 
             
-            <section id="main"><article id="post-drupal7-4" class="article article-post article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-tag"></i></span>
+        <h1 class="title">#Performance</h1>
+    </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            Drupal7 学习笔记之执行流程(五)——请求响应阶段
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/">Jank-Busting-for-Better-Rendering-Performance</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2014/10/27/drupal7-4/">
-            <time datetime="2014-10-26T16:00:00.000Z" itemprop="datePublished">2014-10-27</time>
+        <a href="/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/">
+            <time datetime="2017-09-25T07:26:05.000Z" itemprop="datePublished">2017-09-25</time>
         </a>
     </div>
 
 
-                        
-                        
+                    
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+        <a class="tag-link" href="/tags/Performance/">Performance</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>前面的几步之后，Drupal7已经准备好了相应用户请求的内容并存储在$page_callback_result中，下一步就是交由主题模块渲染整个页面了，在这之前，需要先确定投递函数：<br><a id="more"></a><br><img src="https://app.yinxiang.com/shard/s38/res/bfa3272c-3766-4ca1-8c10-b42a0ac01da2" alt=""><br>menu_execute_active_handler函数的最后一步<br>如果需要投递页面，则首先检查路由项中有无模块设定的投递函数，然后调用drupal_deliver_page函数，此函数位于common.inc文件中。<br>如果不需要投递，则直接返回原始内容<br>$deliver参数默认是TRUE，一般情况下都是需要投递页面的。<br>下面看看drupal_deliver_page函数:<br><img src="https://app.yinxiang.com/shard/s38/res/69f90900-6a24-4fee-bad2-a41e69998a67" alt=""><br>2549行到2552行，确定投递函数，默认是drupal_deliver_html_page，有两种方式可以更改投递函数:<br>1.在模块的hook_menu() 或 hook_menu_alter()钩子函数中设置’delivery callback’ 字段<br>2.在每个请求中实现hook_page_delivery_callback_alter() 钩子</p>
-<p>2555行，即调用上文说的hook_page_delivery_callback_alter()钩子，此时是这次请求中最后一次替换投递函数的机会。</p>
-<p>在确定投递函数之后，检查投递函数是否存在，存在则执行，不存在则记录一个错误。</p>
-<p>接下来看看默认的投递函数drupal_deliver_html_page:<br>第一部分<br><img src="https://app.yinxiang.com/shard/s38/res/9141c1a0-8658-47bd-bed7-f8f52c0583fb" alt=""></p>
-<p>2584行，有响应内容的情况下，如果还没有Content-Type,加上Content-Type</p>
-<p>2589行，设定页面语言</p>
-<hr>
-<p>第二部分<br><img src="https://app.yinxiang.com/shard/s38/res/83b830e1-3444-4f67-9a2c-24bd0d97576e" alt=""><br>这部分主要进行错误处理，如果响应内容是整数，则根据错误类型分别进行处理<br>第三部分<br><img src="https://app.yinxiang.com/shard/s38/res/5d96c65a-3a6c-44f1-a8a4-0900b5e82244" alt=""><br>如果没有错误，且有响应内容，使用drupal_render_page函数对整个响应内容进行渲染</p>
-<p>现在已经来到了指令流程分析的最后一个部分，页面渲染阶段了。</p>
-
-        
-        </div>
-        
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://fpg-alan.github.io/2014/10/27/drupal7-4/" data-id="cj7zy94o0000b3aj7qhvtmwo1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2014/10/28/drupal7-5/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Drupal7 学习笔记之执行流程(六)——页面渲染阶段
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2014/10/26/drupal7-3/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Drupal7 学习笔记之执行流程(四)——请求响应阶段</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-
-
-    
-   
-    
-   
-
+</div>
 </section>
             
                 <aside id="sidebar">
