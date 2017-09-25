@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/index.html">
 <meta property="og:site_name" content="Unspecified">
 <meta property="og:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
-<meta property="og:updated_time" content="2017-09-25T09:07:10.000Z">
+<meta property="og:updated_time" content="2017-09-25T09:21:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jank-Busting-for-Better-Rendering-Performance">
 <meta name="twitter:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
@@ -222,7 +222,7 @@
             <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>You want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between a “native” feel or a clunky, unpolished one.</p>
 <p>This is the first in a series of articles covering rendering performance optimization in the browser. To kick things off, we’ll cover why smooth animation is difficult and what needs to happen to achieve it, as well as a few easy best practices. Many of these ideas were originally presented in “Jank Busters,” a talk Nat Duca and I gave at Google I/O talk (video, slides) this year.</p>
 <p>我们总是希望web app的动画,效果可以灵敏而顺滑, 是否是”Jank-free”的就是其中的关键.</p>
-<p>这是系列文章中的第一篇, 这一系列涉及到浏览器中的渲染性能优化.<br>在一开始,我们将会阐述顺滑动画的难点以及我们需要做什么来达到顺滑, 也包括一些简单的最佳实践. 其中大部分想法是从”Jank Busters”中来的, 这是我和Nat Duca 在今年的Google I/O talk 中做的演讲.</p>
+<p>这是系列文章中的第一篇, 这一系列涉及到浏览器中的渲染性能优化.<br>在一开始,我们将会阐述顺滑动画的难点以及我们需要做什么来达到顺滑, 也包括一些简单的最佳实践. 其中大部分想法是从”Jank Busters”中来的, 这是我和Nat Duca 在今年的Google I/O talk 中做的演讲.<br><a id="more"></a> </p>
 <h2 id="Introducing-V-sync"><a href="#Introducing-V-sync" class="headerlink" title="Introducing V-sync"></a>Introducing V-sync</h2><p>PC gamers might be familiar with this term, but it’s uncommon on the web: what is v-sync?</p>
 <p>Consider your phone’s display: it refreshes on a regular interval, usually (but not always!) about 60 times a second. V-sync (or vertical synchronization) refers to the practice of generating new frames only between screen refreshes. You might think of this like a race condition between the process that writes data into the screen buffer and the operating system reading that data to put it on the display. We want the buffered frame contents to change in between these refreshes, not during them; otherwise the monitor will display half of one frame and half of another, leading to “tearing”.</p>
 <p>To get a smooth animation you need a new frame to be ready every time a screen refresh happens. This has two big implications: frame timing (that is, when the frame needs to be ready by) and frame budget (that is, how long the browser has to produce a frame). You only have the time between screen refreshes to complete a frame (~16ms on a 60Hz screen), and you want to start producing the next frame as soon as the last one was put up on the screen.</p>
