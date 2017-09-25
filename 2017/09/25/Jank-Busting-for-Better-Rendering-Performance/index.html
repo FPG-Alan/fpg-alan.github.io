@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/index.html">
 <meta property="og:site_name" content="Unspecified">
 <meta property="og:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
-<meta property="og:updated_time" content="2017-09-25T09:22:34.000Z">
+<meta property="og:updated_time" content="2017-09-25T09:24:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jank Busting for Better Rendering Performance">
 <meta name="twitter:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
@@ -295,37 +295,41 @@
 <p>如果可能, 使用CSS动画既可以简化你的程序, 也可以使动画更加顺滑, 即使同时有JS在运行.</p>
 <p>For instance, consider this example of a rotating Chrome logo driven by rAF:</p>
 <p>下面的例子, 是一个使用rAF实现的logo旋转动画.</p>
-<pre><code>// see http://paulirish.com/2011/requestanimationframe-for-smart-animating/ for info on rAF polyfills
-rAF = window.requestAnimationFrame;
+<pre><code>{% codeblock lang:javascript %}
+    // see http://paulirish.com/2011/requestanimationframe-for-smart-animating/ for info on rAF polyfills
+    rAF = window.requestAnimationFrame;
 
-var degrees = 0;
-function update(timestamp) {
-    document.querySelector(&apos;#foo&apos;).style.webkitTransform = &quot;rotate(&quot; + degrees + &quot;deg)&quot;;
-    console.log(&apos;updated to degrees &apos; + degrees);
-    degrees = degrees + 1;
+    var degrees = 0;
+    function update(timestamp) {
+        document.querySelector('#foo').style.webkitTransform = "rotate(" + degrees + "deg)";
+        console.log('updated to degrees ' + degrees);
+        degrees = degrees + 1;
+        rAF(update);
+    }
     rAF(update);
-}
-rAF(update);
+    {% endcodeblock %}
 </code></pre><p>If you click the button JavaScript runs for 180ms, causing jank. But if instead we drive that animation with CSS animations the jank no longer occurs.</p>
 <p>如果你点击按钮, JS将会运行180ms, 造成一个卡顿, 但是如果我们使用css来做这个动画, 卡顿将不会发生:</p>
 <p>(写这篇文章的时候, css动画仅仅在安卓的Chrome上实现了jank-free)</p>
 <p>(Remember at the time of this writing, CSS animation is only jank-free on Chrome for Android, not desktop Chrome.)</p>
-<pre><code>/* tools like Modernizr (http://modernizr.com/) can help with CSS polyfills */
-#foo {
-    +animation-duration: 3s;
-    +animation-timing-function: linear;
-    +animation-animation-iteration-count: infinite;
-    +animation-animation-name: rotate;
-}
+<pre><code>{% codeblock lang:javascript %}
+    /* tools like Modernizr (http://modernizr.com/) can help with CSS polyfills */
+    #foo {
+        +animation-duration: 3s;
+        +animation-timing-function: linear;
+        +animation-animation-iteration-count: infinite;
+        +animation-animation-name: rotate;
+    }
 
-@+keyframes: rotate; {
-    from {
-    +transform: rotate(0deg);
+    @+keyframes: rotate; {
+        from {
+        +transform: rotate(0deg);
+        }
+        to {
+        +transform: rotate(360deg);
+        }
     }
-    to {
-    +transform: rotate(360deg);
-    }
-}
+    {% endcodeblock %}
 </code></pre><h2 id="Wrapup"><a href="#Wrapup" class="headerlink" title="Wrapup"></a>Wrapup</h2><p>The short of it is:</p>
 <ol>
 <li>When animating, producing frames for every screen refresh matters. Vsync’d animation makes a huge positive impact on the way an app feels.</li>
