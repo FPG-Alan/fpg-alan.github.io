@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/index.html">
 <meta property="og:site_name" content="Unspecified">
 <meta property="og:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
-<meta property="og:updated_time" content="2017-09-28T06:14:47.000Z">
+<meta property="og:updated_time" content="2017-10-12T07:32:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jank Busting for Better Rendering Performance">
 <meta name="twitter:description" content="IntroductionYou want your web app to feel responsive and smooth when doing animations, transitions, and other small UI effects. Making sure these effects are jank-free can mean the difference between">
@@ -153,11 +153,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                17
+                18
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                6
+                7
                 <span>标签</span>
             </div>
         </div>
@@ -295,7 +295,7 @@
 <p>如果可能, 使用CSS动画既可以简化你的程序, 也可以使动画更加顺滑, 即使同时有JS在运行.</p>
 <p>For instance, consider this example of a rotating Chrome logo driven by rAF:</p>
 <p>下面的例子, 是一个使用rAF实现的logo旋转动画.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// see http://paulirish.com/2011/requestanimationframe-for-smart-animating/ for info on rAF polyfills</span></div><div class="line">rAF = <span class="built_in">window</span>.requestAnimationFrame;</div><div class="line"></div><div class="line"><span class="keyword">var</span> degrees = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params">timestamp</span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'#foo'</span>).style.webkitTransform = <span class="string">"rotate("</span> + degrees + <span class="string">"deg)"</span>;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'updated to degrees '</span> + degrees);</div><div class="line">    degrees = degrees + <span class="number">1</span>;</div><div class="line">    rAF(update);</div><div class="line">&#125;</div><div class="line">rAF(update);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// see http://paulirish.com/2011/requestanimationframe-for-smart-animating/ for info on rAF polyfills</span></div><div class="line">rAF = <span class="built_in">window</span>.requestAnimationFrame;</div><div class="line"></div><div class="line"><span class="keyword">var</span> degrees = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params">timestamp</span>) </span>&#123;</div><div class="line">    </div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'#foo'</span>).style.webkitTransform = <span class="string">"rotate("</span> + degrees + <span class="string">"deg)"</span>;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'updated to degrees '</span> + degrees);</div><div class="line">    degrees = degrees + <span class="number">1</span>;</div><div class="line">    rAF(update);</div><div class="line">&#125;</div><div class="line">rAF(update);</div></pre></td></tr></table></figure>
 <p>If you click the button JavaScript runs for 180ms, causing jank. But if instead we drive that animation with CSS animations the jank no longer occurs.</p>
 <p>如果你点击按钮, JS将会运行180ms, 造成一个卡顿, 但是如果我们使用css来做这个动画, 卡顿将不会发生:</p>
 <p>(写这篇文章的时候, css动画仅仅在安卓的Chrome上实现了jank-free)</p>
@@ -328,7 +328,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" data-id="cj7zy94no00033aj7dwh18xx4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2017/09/25/Jank-Busting-for-Better-Rendering-Performance/" data-id="cj8o54ce2000046j72x3e62t3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -403,6 +403,15 @@
         
 <nav id="article-nav">
     
+        <a href="/2017/10/12/mobx-sourcecode-study/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    MobX 源码学习(一)
+                
+            </div>
+        </a>
+    
     
         <a href="/2017/05/01/nerual-network/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
@@ -432,6 +441,25 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/12/mobx-sourcecode-study/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/10/12/mobx-sourcecode-study/" class="title">MobX 源码学习(一)</a></p>
+                            <p class="item-date"><time datetime="2017-10-12T02:51:13.000Z" itemprop="datePublished">2017-10-12</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -509,25 +537,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/02/bitwise-operators/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/03/02/bitwise-operators/" class="title">Javascript按位操作符</a></p>
-                            <p class="item-date"><time datetime="2017-03-02T03:45:47.000Z" itemprop="datePublished">2017-03-02</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -539,7 +548,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -548,7 +557,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance/">Performance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MobX/">MobX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance/">Performance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -557,7 +566,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/Performance/" style="font-size: 10px;">Performance</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
+            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/MobX/" style="font-size: 10px;">MobX</a> <a href="/tags/Performance/" style="font-size: 10px;">Performance</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
         </div>
     </div>
 
