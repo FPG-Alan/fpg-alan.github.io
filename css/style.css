@@ -2108,6 +2108,8 @@ ol.toc {
   color: #fff;
 }
 .highlight {
+  -webkit-box-shadow: 6px 9px 12px -4px rgba(0,0,0,0.64);
+  box-shadow: 6px 9px 12px -4px rgba(0,0,0,0.64);
   margin: 0px;
   display: block;
   overflow-x: auto;
