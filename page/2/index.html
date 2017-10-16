@@ -152,7 +152,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                19
+                20
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -181,6 +181,135 @@
 
             
             <section id="main">
+    <article id="post-drupal7-project" class="article article-index article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2014/11/08/drupal7-project/">Drupal7 项目经验 Ajax+pushData 无刷新加载</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2014/11/08/drupal7-project/">
+            <time datetime="2014-11-07T16:00:00.000Z" itemprop="datePublished">2014-11-08</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Drupal/">Drupal</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>前面三天一直在学习Drupal7的执行流程，记录了八篇笔记，今天开始来试试学习的成果，上星期就接到这个项目，有个公司内部的展示类网站，使用views模块，之前是普通的页面跳转，需求就是改成无刷新跳转。<br></p>
+            <p class="article-more-link">
+                <a href="/2014/11/08/drupal7-project/#more">查看更多</a>
+            </p>
+        
+        </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://fpg-alan.github.io/2014/11/08/drupal7-project/" data-id="cj8tm6cei000o8kj7sdtz31i3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
+
     <article id="post-drupal7-other" class="article article-index article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -232,7 +361,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/11/03/drupal7-other/" data-id="cj8png0os000h4oj7saxh4tz4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/11/03/drupal7-other/" data-id="cj8tm6ceg000m8kj7grfxzr3w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -361,7 +490,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/29/drupal7-6/" data-id="cj8png0op000e4oj7qh4cf7wv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/29/drupal7-6/" data-id="cj8tm6cem000s8kj7akvp43rv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -490,7 +619,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/28/drupal7-5/" data-id="cj8png0oo000c4oj753q03guz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/28/drupal7-5/" data-id="cj8tm6ce8000k8kj7ldh1k8qv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -619,7 +748,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/27/drupal7-4/" data-id="cj8png0on000a4oj7mfb00skz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/27/drupal7-4/" data-id="cj8tm6ce3000g8kj70dj28gl7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -748,7 +877,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/26/drupal7-3/" data-id="cj8png0om00094oj7ec3fd7os" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/26/drupal7-3/" data-id="cj8tm6ccp00028kj7x5qwizmd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -877,7 +1006,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/25/drupal7-2/" data-id="cj8png0oh00064oj7u5stjtb9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/25/drupal7-2/" data-id="cj8tm6ccw00048kj7wudbizm5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1006,7 +1135,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/24/drupal7-1/" data-id="cj8png0og00054oj7wzpjy51n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/24/drupal7-1/" data-id="cj8tm6ce2000e8kj7p05n6a51" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1135,7 +1264,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/23/drupal7-0/" data-id="cj8png0of00044oj7zm1a4g25" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/23/drupal7-0/" data-id="cj8tm6cdz000d8kj7epsd98yd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1264,7 +1393,7 @@
 
 </div>
 
-    <a data-url="https://fpg-alan.github.io/2014/10/20/drupal7-hook/" data-id="cj8png0ou000j4oj7g3qmbk9y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://fpg-alan.github.io/2014/10/20/drupal7-hook/" data-id="cj8tm6ce5000i8kj7otp820rf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1358,6 +1487,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/10/16/mobx-sourcecode-study-3/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/10/16/mobx-sourcecode-study-3/" class="title">MobX 源码学习(三)</a></p>
+                            <p class="item-date"><time datetime="2017-10-16T02:01:50.000Z" itemprop="datePublished">2017-10-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/10/12/mobx-soucercode-study-2/" class="thumbnail">
     
     
@@ -1431,25 +1579,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/03/23/basic-http/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/03/23/basic-http/" class="title">从输入地址到获取页面详细过程</a></p>
-                            <p class="item-date"><time datetime="2017-03-23T08:29:59.000Z" itemprop="datePublished">2017-03-23</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1461,7 +1590,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -1470,7 +1599,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MobX/">MobX</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance/">Performance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drupal/">Drupal</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MobX/">MobX</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Performance/">Performance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-nodejs/">javascript nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nerual-network/">nerual network</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/technology-stack/">technology stack</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1479,7 +1608,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/MobX/" style="font-size: 15px;">MobX</a> <a href="/tags/Performance/" style="font-size: 10px;">Performance</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
+            <a href="/tags/Drupal/" style="font-size: 20px;">Drupal</a> <a href="/tags/MobX/" style="font-size: 16.67px;">MobX</a> <a href="/tags/Performance/" style="font-size: 10px;">Performance</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/javascript-nodejs/" style="font-size: 10px;">javascript nodejs</a> <a href="/tags/nerual-network/" style="font-size: 10px;">nerual network</a> <a href="/tags/technology-stack/" style="font-size: 10px;">technology stack</a>
         </div>
     </div>
 
