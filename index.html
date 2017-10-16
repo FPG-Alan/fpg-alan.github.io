@@ -218,7 +218,7 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h3 id="Set-拦截器"><a href="#Set-拦截器" class="headerlink" title="Set 拦截器"></a>Set 拦截器</h3><p>上一次看到了 Get 拦截器, 以及某个 reaction 如何进行依赖收集, 并和自己的依赖进行双向绑定, 接下来还需要看看 Set 拦截器, 之后才能够把整个流程大致走通.<br></p>
+            <p><h3 id="Set-拦截器"><a href="#Set-拦截器" class="headerlink" title="Set 拦截器"></a>Set 拦截器</h3><p>上一次看到了 Get 拦截器, 以及某个 <code>reaction</code> 如何进行依赖收集, 并和自己的依赖进行双向绑定, 接下来还需要看看 Set 拦截器, 之后才能够把整个流程大致走通.<br></p>
             <p class="article-more-link">
                 <a href="/2017/10/16/mobx-sourcecode-study-3/#more">查看更多</a>
             </p>
@@ -477,7 +477,8 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h3 id="执行流程分析"><a href="#执行流程分析" class="headerlink" title="执行流程分析"></a>执行流程分析</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> test = mobx.observable(&#123;</div><div class="line">    <span class="attr">foo</span>: <span class="string">'bar'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">test.foo = <span class="number">1</span></div></pre></td></tr></table></figure>
+            <p><p><strong>本次源码学习使用版本 3.2.2</strong></p>
+<h3 id="observable-包装流程"><a href="#observable-包装流程" class="headerlink" title="observable 包装流程"></a>observable 包装流程</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> test = mobx.observable(&#123;</div><div class="line">    <span class="attr">foo</span>: <span class="string">'bar'</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">test.foo = <span class="number">1</span></div></pre></td></tr></table></figure>
 <p>这里使用MobX对一个Object进行包装, 返回一个可被观察的值, 然后对这个值进行重新赋值.</p>
 <p>下面来看看在MobX中的执行过程.<br></p>
             <p class="article-more-link">
