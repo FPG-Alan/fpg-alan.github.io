@@ -1,0 +1,120 @@
+[
+{
+	"uri": "http://localhost/cn/concepts/",
+	"title": "概览说明",
+	"tags": [],
+	"description": "",
+	"content": " 广告系列（Campaign） 广告系列可以让你更高效地找到和管理所有你创建的文件。\n\n创意成品（Creative） 创意成品代表生成的一组视频文件，它们由相同的视频蓝图生成，并且具有相同的数据输入。但是这组视频文件的视频格式，尺寸，码率，适应平台等可能存在区别。\n\n策略（Batch） 一个策略是一个包括创意文件中所有可配置内容的产品目录(feed)。 它使用标准格式来描述文件。使用这种格式时，我们将文件各个方面称为文件属性。例如，你可以在字体标题属性中指定字体名称，在文字属性中指定文字内容等。它可以让客户快速、批量地更新创意文件的内容。\n\n视频蓝图（Blueprint） 视频蓝图由一个Nuke文件和一个Json文件组成。Nuke文件里包含动画的蓝图，Json文件里包含蓝图中所有可配置字段。例如：产品名，文字等。\n\n帮助贴（Support Ticket） 如果你有一个新的项目需求或者在平台处理过程中遇到无法解决的问题，你可以使用帮助帖。我们的客户支持会帮助你解决问题。\n\n用户（User） User 这个跟Slack很像, 用户一般是由管理人员创建或者由组织管理者发送邀请邮件加入。User 是全局的，但是一个 User 可以加入多个组织并且在不同的组织中有不同的角色(Role)。\n\n组织（Organization） 一个组织通常代表一家公司，也可以作为一家公司里独立的多个部门来使用。管理员账号可以在组织里创建团队，添加和邀请新用户，给用户分配角色，上传资源等。\n\n角色（Role） 用户角色决定了你在这个平台的操作权限。例如：拥有项目经理权限的用户可以在Support Ticket里发贴回复，拥有QA权限的用户可以QA通过文件。（想要了解更多角色的信息，查看这里）\n\n团队（Team） Team 的概念跟 group 的概念其实是有差异的，但是与 github 里面的 Team 意思相近。 一个 Team 里面可以添加成员，成员可以是普通用户也可以是一个组织。Team里面还需要添加与成员相关的其他资源，比如 Project 等。然后就可以设置全体 Team 成员对这些资源的访问权限（可以设置全体成员对单个资源的访问权限）。而 pdf 中是传统的 group 概念，里面好像没有对应的资源定义。可以认为 Team 是一种比Role更灵活的临时权限定义方式。在某些时候会很合适定义 Team, 比如：\n 某组织的某个项目需要临时加入组织外的某人（或者其他组织）协作完成，此时就可以创建一个Team，然后添加某人或者某个组织进来，再将某个项目作为资源加入，设置Team成员对此项目的访问权限（比如：可以修改，但是不可以删除，不可以发布等）。需要注意的是，通过这种方式，我们并不需要将本组织的Role赋予某人，也不需要把某人添加进自己的组织，即可给他们权限操作本组织里面的项目。再者，能够实现组织之间的管理透明，这里是可以把组织当做成员加入的，加入后其他组织的管理员将拥有不高于本Team对项目的最高访问权限。同时他还可以再把此项目分配给组织内部成员，而这个是原组织不需要关心的。\n 希望提升组织中某些用户在某些项目中的权限。比如想将某项目的发布任务交于某人，但是并不想让他拥有除此项目以外的项目的发布权限。\n  相比于Role，Role一般都是控制内部成员对一系列资源的访问权限的，但是粒度上只能到某种资源的某种访问权限，不会控制对某类资源的某一个资源的访问权限；而Team则是可以的。\n   对比 Team Role     灵活性 可以随意创建 一个组织中的Role是相对固定的   是否可以控制组织外成员 可以，不仅可以添加组织外用户，还能添加其他组织作为成员 不可以   控制粒度 全体Team成员对Team内单个资源的访问权限 对某一类资源的某一种权限，不可细分至其中的某一个资源   生存周期 可以在有权限分配需求时即时创建，不需要时就删除 虽然可以添加删除，但是一般比较固定；创建删除的影响比较大    \n"
+},
+{
+	"uri": "http://localhost/cn/studio/font/",
+	"title": "字体",
+	"tags": [],
+	"description": "",
+	"content": " 支持的字体格式：  otf ttf  请所有字体文件扩展名使用小写字母，Nuke 有时对大写的文件扩展名可能无法正常识别。\n删除字体可能会导致后续依赖此字体的渲染无法正常显示，请谨慎删除字体。\n在安装视频蓝图或者上传 Batch 资源时，如果内含字体文件，这些字体文件会被自动安装。\n一般情况下，不同的系统中同一个字体可能有不同的名称，而平台使用同一的规则计算出唯一的字体名称，可以使用命令行工具查看某个文件夹下所包含的字体信息列表： savvy fonts\n"
+},
+{
+	"uri": "http://localhost/cn/studio/batch/",
+	"title": "策略",
+	"tags": [],
+	"description": "",
+	"content": " 策略 (Batch) 使用策略可以生成多个版本的视频，策略包含一个 Excel 格式的表格或者 Google sheets。表格中的每一行表示一个 Creative。每一列是对 Creative 具体字段或者属性的设置。 \n支持的 Feed 格式  Google spreadsheet ( recommended ) Excel (.xlsx) 文件  \n创建新策略  In the Sudio tab, select batch from the side panel. Click create. Fill in the required information, click next. ( Note: \u0026lsquo;####\u0026rsquo; on Creative Name Rule equals to the digit number. For example: if you have 240 videos, the auto-generated video name for the 122nd video is 0122 ).\n Upload your feed and assets ( zip all the assets in a file is supported ) If any problems happen during this process, click help me done to open a ticket and send us your request( What\u0026rsquo;s ticket? ) Click valid\u0026amp;generate if you don\u0026rsquo;t have any problems. Click build. Click back to list to see your created batch.  创建 Batch 时, Creative Name Rule 一栏的说明： 这一栏是指生成的 Creative 的命名规则。\n name_#### 这里面的 # 号是代表数字占位符。比如这里有 4 个 #，那么生成的 creative 的名字将会是这样： name_0000, name_0001, name_0002... - name_${field} 这里的 ${field} 意思是指用 feed 中的 field 列的内容填充。 ### Feed 格式说明 - 必须存在一个Sheet，名字叫 index。这个是主表格。 - index 中的第一行是 field 的名字。每一行就代表一个 creative。 - 第一行中以 $ 开头的列名称是对应于生成 creative 的配置，等价于 Blueprint list/generate 按钮点击后页面里面的某些设置。比如说，我们需要设置 creative 输出视频的信息。 - 可以通过 $signet 设置一个唯一的名称，保证每次重新生成时新生成的creative与原来的creative有同样的id号。 在这个例子里，通过 $outputs.* 设置的都是输出视频的默认值。 ### 文本类型 - value: 代表文本类型中的文字内容 - justify: - x: 改变文本水平居中方式，值有: left, center, right - y: 改变文本竖直居中方式，值有: top, center, bottom - font: 文本类型所使用的字体 - name: 字体名称，是字体类别和样式的组合，如果设置了名称就无需设置类别和样式。 - family: 字体类别 - style: 字体样式 - size: 字体大小 - width: 字体宽度 - height: 字体高度 - color: 文字颜色，可以设置为rgba(1,1,1,1)，或者#RRGGBBAA. - opacity: 透明值，0-1。 ### 图片/视频类型 - file: 文件路径 ### 输出设置 所有的输出设置，列名以 $output. 开始 $outputs.* - $outputs.dimension: 所有输出视频的默认尺寸，宽x高。 - $outputs.format: 所有输出视频的默认格式，如: mp4。 - $outputs.bit_rate: 所有输出视频的默认码率，如: 30Mbps。 - $outputs.max_bit_rate: 所有输出视频的最大码率，如: 30Mbps。 - $outputs.min_bit_rate: 所有输出视频的最小码率，如: 3Mbps。 对于每一个输出，可以设置成诸如: $outputs[0].dimension 这样的格式。  "
+},
+{
+	"uri": "http://localhost/cn/studio/blueprint/",
+	"title": "视频蓝图",
+	"tags": [],
+	"description": "",
+	"content": " 视频蓝图是指生成多版本视频的蓝图。视频蓝图中一般包含以下内容：\n 配置文件，可以是 yaml 格式或者 json 格式的 Nuke 等文件 字体文件 采样文件，由客户端命令行工具生成，放置在 samples 文件夹下 其他资源文件  \n制作视频蓝图时，需要注意以下问题：\n Nuke 中 jpg 在 linux 下只能命名为 jpeg，否则打开文件时会出错。所以，任何使用到jpg的地方，请使用 jpeg 作为文件扩展名。 对于 Nuke 文件禁止使用绝对路径的资源。Nuke 的项目设置里需设置 project directory 为 [python {nuke.script_directory()}]。 字体文件必须放在 fonts 文件夹下。Nuke 不支持使用相对路径的字体根目录。建议的做法是，本地安装需要使用的字体，然后命令行工具打包时会检测到使用到的字体，并且会将这些字体文件放置到 fonts 文件夹下。 采样文件，由客户端命令行工具生成，放置在 samples 文件夹下。 Nuke 中文字的字体大小等是单个字体设置。所以，动态文字最好不要调整默认字体大小，而是全局缩放，这样如果动态替换后，即使文字长于之前的默认文字长度，也能正常显示。否则，多出的文字将会使用默认文字样式。  视频蓝图配置文件说明： 视频蓝图配置文件用于描述视频蓝图的基本信息。比如，包含哪些动态字段以及他们的各自类型、有哪些规格的采样文件等。文件可以使用 yaml 或者 json 格式，对应名称分别为：blueprint.yaml, blueprint.json. 以下是一个简单的视频蓝图配置文件： { \u0026#34;spec_version\u0026#34;: \u0026#34;0.0.2\u0026#34;, \u0026#34;fields\u0026#34;: { \u0026#34;city\u0026#34;:{ \u0026#34;type\u0026#34;: \u0026#34;text\u0026#34;, \u0026#34;required\u0026#34;: true }, \u0026#34;inside\u0026#34;:{ \u0026#34;type\u0026#34;: \u0026#34;image\u0026#34;, \u0026#34;required\u0026#34;: true }, \u0026#34;outside\u0026#34;:{ \u0026#34;type\u0026#34;: \u0026#34;image\u0026#34;, \u0026#34;required\u0026#34;: true }, \u0026#34;endframe\u0026#34;:{ \u0026#34;type\u0026#34;: \u0026#34;image\u0026#34;, \u0026#34;required\u0026#34;: true }, \u0026#34;overview\u0026#34;:{ \u0026#34;type\u0026#34;: \u0026#34;video\u0026#34;, \u0026#34;required\u0026#34;: true }, \u0026#34;experience\u0026#34;:{ \u0026#34;type\u0026#34;: \u0026#34;video\u0026#34;, \u0026#34;required\u0026#34;: true } }, \u0026#34;output\u0026#34;: \u0026#34;root\u0026#34;, \u0026#34;fusions\u0026#34;: { \u0026#34;root\u0026#34;: { \u0026#34;file\u0026#34;: \u0026#34;concept5.nk\u0026#34;, \u0026#34;output\u0026#34;: \u0026#34;Merge21\u0026#34;, \u0026#34;inputs\u0026#34;: [{ \u0026#34;field\u0026#34;: \u0026#34;city\u0026#34;, \u0026#34;path\u0026#34;: \u0026#34;DYN_city\u0026#34; },{ \u0026#34;field\u0026#34;: \u0026#34;inside\u0026#34;, \u0026#34;path\u0026#34;: \u0026#34;DYN_inside\u0026#34; },{ \u0026#34;field\u0026#34;: \u0026#34;outside\u0026#34;, \u0026#34;path\u0026#34;: \u0026#34;DYN_outside\u0026#34; },{ \u0026#34;field\u0026#34;: \u0026#34;endframe\u0026#34;, \u0026#34;path\u0026#34;: \u0026#34;DYN_endframe\u0026#34; },{ \u0026#34;field\u0026#34;: \u0026#34;overview\u0026#34;, \u0026#34;path\u0026#34;: \u0026#34;DYN_overview\u0026#34; }, { \u0026#34;field\u0026#34;: \u0026#34;experience\u0026#34;, \u0026#34;path\u0026#34;: \u0026#34;DYN_experience\u0026#34; }] } }, \u0026#34;samples\u0026#34;: { \u0026#34;300x300\u0026#34;:{\u0026#34;width\u0026#34;:300, \u0026#34;height\u0026#34;: 300, \u0026#34;video\u0026#34;:{\u0026#34;poster\u0026#34;: 1}, \u0026#34;image\u0026#34;:{\u0026#34;frames\u0026#34;: [1, 10, 50]}} } } \n spec_version，这个是当前配置文件所使用的规格文档的版本号，为后续文件规格升级兼容而设，当前版本号为: 0.0.2 fields: fields 节点配置动态字段，字段内的 type 属性必须设置，当前可以设置的值:  image, 表示图片类型 video, 表示视频类型 audio, 表示音频类型 file, 表示其他类型的文件类型 text/string, 表示文本类型 color, 表示颜色色值, rgba格式, 可以写成[255, 255, 255, 1], 或者{r:255, g: 255, b:255, a:1}, 或者#FFFFFFFF  output: 输入最终供输出的 fusion 的名字, fusion 的定义在下面的 fusions 节点。比如： root#write1 代表名字为 root 的 fusion 下的输出路径为 write1 的输出。 output 也可以是一个 object 对象。内部可以包含一个 rules 的定义，rules 为一个数组，数组的每一项是一个object对象，形如： {when: \u0026lsquo;width300\u0026rsquo;, fusion:\u0026lsquo;root#write1\u0026rsquo;}. 其中， when 后面是一个字符串，判断在何时使用 fusion 中定义的输出。 可以用作表达式的属性包含： width, height, aspect_ratio。 audio: 设置音频  snatchs: 音频片段设置  offset_frame: 音频在输出的文件的时间轴上的位置(以帧为单位) offset_time: 音频在输出的文件的时间轴上的位置(以秒为单位) range_begin: 音频文件截取的开始位置 range_close: 音频文件截取的结束位置 field: 音频文件源从field获取 file: 音频文件源从文件获取   fusions: 定义 fusion 文件，一个视频蓝图可以包涵多个 fusion，并且他们之前可以存在相互引用的关系，但是一般情况下就只有一个 fusion 文件  file: 定义Nuke文件的相对路径 output/outputs: Nuke 文件最终的输出节点。如果只有一个，可以直接定义为output。如果有多个，可以使用 outputs 定义一个数组。数组里的每一个项是一个 object 对象，形如： {path: \u0026ldquo;badfa/zzz\u0026rdquo;, format: \u0026ldquo;mp4\u0026rdquo;, flexible: true}。 path 是输出结点的路径。 flexible 为可选项，默认为 false，代表本结点是静态的，不会因为场景的改变而改变显示，这种情况下，渲染平台可以最大程度使用缓存，多个实例可能公用渲染结果。而 flexible 设置为 true, 意味着此结点会因为场景改变而自动做出调整，此时，多个渲染实例都不会共享渲染结果。 inputs: 定义 Nuke 文件接收的输入，输入可以是前面定义的 fields 部分的字段，也可以是其他的 fusion 文件的输出结果  field: 定义将哪个字段作为输入，field 和 fusion 必须定义一个 fusion: 定义将哪个 fusion 文件的输出作为此节点的输入 path: 定义对应的要替换节点的路径。Nuke 中的节点如果存在 Group，则是可以嵌套的。使用 Group1 中的 Text1 的路径就是 Group1/Text1   samples: 定义采样信息，采样文件在平台上用于提供视频蓝图预览。要求必须包含一个 \u0026ldquo;300x300\u0026rdquo; 的定义。  width: 定义输出的采样视频或者图片的宽度 height: 定义输出的采样视频或者图片的高度 video: 定义输出视频的相关信息  poster: 用第几帧的输出作为视频的起始画面  image: 定义输出图片的相关信息  frames: 定义要输出哪些帧的图片    视频蓝图打包： 视频蓝图上传前必须使用命令行工具打包，打包过程中，命令行工具会检测文件配置等是否正确。打包命令为：\nsavvy bundle  蓝图钩子 在蓝图中可以创建一个文件夹，名为 hooks, 里面存放与 fusion 名对应的脚本文件。 before_compute_volumes(volumes, outputs, args, nuke) catch_compute_volumes(volumes, outputs, args, nuke) after_compute_volumes(volumes, outputs, args, nuke) before_adjust_volume(volume, args, nuke) catch_adjust_volume(volume, args, nuke) after_adjust_volume(volume, args, nuke)\nbefore_merge_inputs(creative, fusion) catch_merge_inputs() after_merge_inputs(creative, fusion)\n"
+},
+{
+	"uri": "http://localhost/cn/develop/access-tokens/",
+	"title": "访问令牌",
+	"tags": [],
+	"description": "",
+	"content": " 访问令牌  创建访问令牌: 在后台页面里点击 Access Tokens, 在此页面可以创建新的访问令牌.  "
+},
+{
+	"uri": "http://localhost/cn/savvy-cli/",
+	"title": "Savvy-cli",
+	"tags": [],
+	"description": "",
+	"content": " Savvy-cli 是一个开发视频蓝图时使用的工具。\nSavvy-cli 安装  确保本机已经安装好 nodejs，如果没有安装，可到官方网站下载安装。\n 下载 savvy-cli 安装包，解压后，在 savvy-cli 目录下运行如下命令： npm install npm link \n 命令行窗口键入 savvy 确认命令能正常运行。\n  Savvy-cli 使用 Savvy-cli 提供以下几个命令：\n 用户登录：\nsavvy login  使用默认蓝图初始化一个视频蓝图：\nsavvy blueprint init  渲染视频蓝图所有的预览视频和截图 (截图的配置在 blueprint.json 里面)：\nsavvy blueprint sample  视频蓝图打包：\nsavvy blueprint bundle  列出当前文件夹及其所有子孙文件夹下的字体：\nsavvy blueprint fonts  命令行创建一个蓝图到savvy网站：\n 需要的参数有realm_id,name(蓝图的名字) 需要的文件：file（bundle.zip）\nsavvy blueprint create //例子 savvy blueprint create --realm_id 8 --name test --file bundle.zip   更新蓝图的bundle文件：\n 需要的参数有blueprint_id 需要的文件：file（bundle.zip）\nsavvy blueprint upload //例子 savvy blueprint upload --blueprint_id 133 --file bundle.zip   命令行创建一个Batch到savvy网站：\n 需要的参数有org_id(organization_id),realm_id,cmp_id(compaign_id),blueprint_id,name(batch名字) 需要的文件：feed（json格式） ,asset（zip包）\nsavvy batch create //例子 savvy batch create --org_id 5 --realm_id 8 --cmp_id 19 --blueprint_id 128 --name cli_create_test --feed feed-BeatlesV2-800x800.json --asset 800x800.zip   更新batch并重新build：\n 需要的参数有batch_id,realm_id 需要的文件：feed（json格式） ,asset（zip包）,如果不更新文件不用上传feed和asset\nsavvy batch regenerate //例子 savvy batch regenerate --batch_id 204 --asset 800x800.zip --feed feed-BeatlesV2-800x800.json   下载线上视频到本地并去除视频前缀：\n 需要的参数有batch_id，search，output(下载的文件路径) 两种下载方式，按照batch_id或者关键字search\nsavvy download //例子 savvy download --batch_id 113 --output download    "
+},
+{
+	"uri": "http://localhost/cn/quick-start-guide/",
+	"title": "快速开始",
+	"tags": [],
+	"description": "",
+	"content": " 步骤 1：安装 Nuke 本地需要安装 Nuke，请到官方网站下载安装。当前支持的版本为 Nuke 11.1v3。\n注意: Nuke 需要安装在默认的文件路径下。\n步骤 2: 安装 Savvy-cli  确保本机已经安装好 nodejs，如果没有安装，可到官方网站下载安装。 下载 Savvy-cli 安装包，解压后，在 savvy-cli 目录下运行如下命令： npm link   步骤 3: 下载示例文件  下载并解压示例文件 打开里面的fonts文件夹, 安装里面的字体。 进入解压后的文件夹下, 运行以下命令： savvy sample  如果此命令报错，可能意味着 Nuke 不是注册版本。  步骤 4：创建 Campaign  进入后台后点击左侧的菜单 Studio -\u0026gt; Campaigns 进入 Campaign 列表页面。\n 点击列表页面头部的 Create 按钮，进入创建 Campaign 的页面。\n 在创建页面中输入名称简介。\n 点击 Submit 按钮完成创建，页面会返回 Campaign 列表页面，你可以看到刚刚创建好的 Campaign。\n  步骤 5：创建 Blueprint  进入后台后点击左侧的菜单 Studio -\u0026gt; Blueprints 进入 Blueprint 列表页面。\n 点击列表页面头部的 Create 按钮，进入创建 Blueprint 的页面。\n 输入 Blueprint 的名称，点击 Next 按钮。\n 进入步骤 3 中解压好的示例文件的目录quick_started/blueprint_simple下，运行以下命令： savvy sample savvy bundle \n savvy sample 会生成一个目录，内部生成用于预览用的视频图片等。 - savvy bundle 会把当前目录作为一个 Blueprint 验证并且打包。  点击上传区域或者直接把视频蓝图的压缩包拖入到上传区域，等待上传完成，点击 Validate \u0026amp; Next 进入下一步。\n 页面显示成功创建 Blueprint\n  步骤 6：使用 Blueprint 生成 Creative  进入后台后点击左侧的菜单 Studio -\u0026gt; Blueprints 进入 Blueprint 列表页面。\n 选择刚刚创建好的 Blueprint，点击 Generate 进入生成 Creative 页面。\n 输入 Creative 的名称，Campaign 输入步骤 1 所创建的 Campaign，Notify Email 可以输入需要得到通知信息的邮箱地址也可以直接置空。\n 在 Export Setting 中，已经有一个默认的输出，可以点击右侧的 Add output 的下拉列表，添加更多的 Output。点击 Next 按钮进入下一步。\n 输入 title 的文本，点击输入框右侧小图标，可以显示字体的一些设置。在 watermark 中可以上传一张新的图片，点击 Next 按钮进入下一步。\n 点击 Build 按钮进入 Next 按钮完成。\n 进入后台后点击左侧的菜单 Studio -\u0026gt; Creatives 进入 Creative 列表页面，可以看到刚刚创建的 Creative 正在渲染，并有渲染进度。渲染结束后，右侧会显示 View 按钮，点击可以预览生成好的视频。\n  步骤 7：使用 Batch 批量生成 Creative  进入后台后点击左侧的菜单 Studio -\u0026gt; Batches 进入 Batch 列表页面。\n 点击列表页面头部的 Create 按钮，进入创建 Batch 的页面。\n Campaign 中填写步骤 1 创建的 Campaign 的名字；填写要创建的 Batch 的名字，Blueprint 中填写 步骤 4 中创建的 Blueprint。 Creative Name Rule 保持默认的即可。Notify Emails 中输入用于接收通知的邮箱地址。点击 Next 按钮进入下一步。\n 在 Feed 中选择示例文件下的 xlsx 文件 quick_started/batch_simple/batch.xlsx 上传。\n 将示例文件中的 quick_started/batch_simple/assets 文件夹下所有子文件选中打包成 assets.zip，在页面的 Assets 中上传 assets.zip 文件，点击 Validate\u0026amp;Next 按钮进入下一步。\n 此时页面中显示所有按照数据生成的 Creatives，如果不需要这些 Creatives 则可以删除，点击 Build 按钮进入下一步完成创建。\n 进入后台后点击左侧的菜单 Studio -\u0026gt; Creatives 进入 Creative 列表页面，可以看到刚刚创建的 Creative 正在渲染，并显示渲染进度。渲染结束后，右侧会显示 View 按钮，点击可以预览生成好的视频。\n  "
+},
+{
+	"uri": "http://localhost/cn/dashboard/",
+	"title": "主面板",
+	"tags": [],
+	"description": "",
+	"content": " 主面板 -你所有提交的帮助帖都会在主面板的第一列显示，其他几列会显示帖子当前的进度（想要了解帮助帖的信息，查看这里），所属公司以及修改时间。\n-不同的状态会用不同的颜色表示。你可以通过箭头选择查看最新和最早发布的帖子。\n"
+},
+{
+	"uri": "http://localhost/cn/studio/",
+	"title": "创作系统",
+	"tags": [],
+	"description": "",
+	"content": " 创作平台（Studio） 你可以在创作平台里上传视频蓝图，字体，策略文件生成视频，同时你也可以在这里去查看和管理你的广告系列和创意广告。\n"
+},
+{
+	"uri": "http://localhost/cn/studio/creative/",
+	"title": "创意成品",
+	"tags": [],
+	"description": "",
+	"content": " 创意成品代表生成的一组视频文件，它们由相同的视频蓝图生成，并且具有相同的数据输入。但是这组视频文件的视频格式、尺寸、码率、适应平台等可能存在区别。\n\n渲染状态：    状态 描述     新文件 还未开始渲染的新文件   渲染错误 有错误的渲染文件，所以无法正常预览   渲染成功 渲染成功的文件，可以正常预览    \n编辑一个创意广告：  点击操作栏里的蓝色编辑按钮。 重新填写一个新的广告名称或选择一个新的广告系列，点击下一步。 替换蓝图视频蓝图中的可配置字段，例如：图片、文字等，点击下一步。 点击开始生成并渲染。 点击返回列表去查看视频渲染状态，一旦完成，操作栏中会出现一个蓝色的预览按钮，点击预览按钮可以浏览生成好的视频。  "
+},
+{
+	"uri": "http://localhost/cn/studio/campaign/",
+	"title": "广告系列",
+	"tags": [],
+	"description": "",
+	"content": " 广告系列（Campaign） 广告系列可以让你更高效的找到和管理所有你创建的文件。\n\n添加一个新的广告系列：  在操作平台标签，选择侧面板中的广告系列。 点击创建。 填写必要信息后，点击提交。  \n编辑一个广告系列：  在广告系列页面通过搜索或者列表中找到一个广告系列。 点击操作栏里的蓝色编辑按钮。 在编辑页面中，编辑信息然后最后点击提交。  \n删除一个广告系列：  在广告系列页面通过搜索或者在列表中找到一个广告系列。 点击操作栏里的蓝色删除按钮。 在弹出的小窗口中点击ok删除广告系列。  \n删除多个广告系列：  手动选择多个广告系列或点击左上角的所有。 点击批量操作\u0026gt;删除。 点击提交。  "
+},
+{
+	"uri": "http://localhost/cn/supporting-tickets/",
+	"title": "工单系统",
+	"tags": [],
+	"description": "",
+	"content": " Support Tickets If there\u0026rsquo;s a new project request or a problem that you can\u0026rsquo;t solve with online help document, we\u0026rsquo;ve got customer support to help you. Customer support is available during regular business hours in your region. After-hours coverage is available for high-priority issues such as system outages.\nFrom here, you can create a proper ticket.\n\nTo create a ticket:  Click the create at the top left. Choose your organization. Write a custom title or use the pre-set title through clicking Use a Blueprint from the subject line. Write a custom content decription or use the pre-set description through clicking Use a Blueprint from the subject line. Attach the files if you have ( NOTE:The max file size for now is x GB ) Click submit and make sure you see the pop up box \u0026lsquo;Ticket has been sent successfully\u0026rsquo; appearing at the top.  \nTicket status:    Status Descrption     New A new ticket is created   Pending The request has been received by FPG   Finish The request has been finished    \nHow we respond The support team\u0026rsquo;s ability to address an issue depends upon prompt responses from clients to requests for more information. If we do not receive the necessary troubleshooting information and can\u0026rsquo;t proceed with the investigation, we will contact with you until you are able to provide the requested information.\nThe support team cannot answer questions about product pricing or fees. Instead, contact your Savvy account manager or the sales team.\nIf an issue is urgent, please let the support team know.\n"
+},
+{
+	"uri": "http://localhost/cn/system/",
+	"title": "系统设置",
+	"tags": [],
+	"description": "",
+	"content": " 系统设置 在 Savvy 平台中的 System 一栏中，超级管理员能够对系统进行设置修改和保存。\n"
+},
+{
+	"uri": "http://localhost/cn/develop/",
+	"title": "开发接口",
+	"tags": [],
+	"description": "",
+	"content": " 开发接口 Savvy 平台提供 RESTful 的开发接口供开发使用。\n简单示例 "
+},
+{
+	"uri": "http://localhost/cn/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://localhost/cn/",
+	"title": "Savvy",
+	"tags": [],
+	"description": "",
+	"content": " Savvy Savvy 是一个新型创建社交视频的平台。\n在 Savvy 平台上, 可以通过可定制的视频蓝图快速生成不同尺寸可规格的视频。\n借助于策略(Batch), 可以批量生成多版本视频。\n得益于 AWS 云的强大的运算能力, 视频的渲染速度非常迅速。\n平台提供完善的组织和用户的管理能力, 可以满足组织内部对项目的管理需求以及跨组织的生产协作对权限和项目的管理需求。\n平台能够实现集中式的视频广告的多平台投放以及数据分析。\n"
+},
+{
+	"uri": "http://localhost/cn/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

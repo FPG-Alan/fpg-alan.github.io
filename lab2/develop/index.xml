@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developer API on Savvy Client Manual</title>
+    <link>http://localhost/develop/</link>
+    <description>Recent content in Developer API on Savvy Client Manual</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://localhost/develop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost/develop/_list-records/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/develop/_list-records/</guid>
+      <description> List URL Query Params    Name Required Description     limit No Limit the returned records max count   offset No Skip a number of records from the returned result   sort No Sort the return result by a specific field. For example, &amp;ldquo;-id&amp;rdquo; means sort by &amp;ldquo;id&amp;rdquo; field with results in descending order and &amp;ldquo;id&amp;rdquo; would return the results in ascending order   search No A string value for search record&amp;rsquo;s name field   filter No A JSON object for complex filtering of returned records    Return data structure { records: [], offset: 10, total: 100 }     Field Type Description     records Array Returned records   offset int Skipped records count   total int Total records count    </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://localhost/develop/realms/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/system/all-users/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/studio/batch/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/studio/batch/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/studio/batch/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/studio/blueprint/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/studio/blueprint/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/studio/blueprint/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/studio/campaign/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/studio/campaign/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/studio/campaign/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/studio/creative/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/studio/creative/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/studio/creative/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/studio/font/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/studio/font/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/studio/font/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/system/organizations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/system/system-roles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/access-tokens/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/develop/access-tokens/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/develop/access-tokens/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/blueprint/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/concepts/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/concepts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/concepts/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/glossary/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/campaigns/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/savvy-cli/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/savvy-cli/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/savvy-cli/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/batches/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/quick-start-guide/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/quick-start-guide/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/quick-start-guide/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/creatives/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/dashboard/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/dashboard/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/dashboard/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/fonts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/studio/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/studio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/studio/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/supporting-tickets/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/supporting-tickets/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/supporting-tickets/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/system/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/system/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/system/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/develop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/develop/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/supporting-tickets/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/supporting-posts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/code-examples/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/develop/_list-records/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost/cn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost/tags/"
+                />
+  </url>
+  
+</urlset>
